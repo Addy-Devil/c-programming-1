@@ -43,10 +43,10 @@ const char * ranking_to_string(hand_ranking_t r) {
 
 char value_letter(card_t c) {
   if (c.value < 10) {
-    return 50 + c.value;
+    return 48 + c.value;
   }
   else if (c.value==10) {
-    return 50;
+    return 48;
   }
   else if (c.value==11) {
     return 74;
@@ -72,10 +72,10 @@ char suit_letter(card_t c) {
     return 'h';
     break;
   case CLUBS:
-    return 'd';
+    return 'c';
     break;
   default:
-    return DIAMONDS;
+    return 'd';
     break;
   }
 }

@@ -1,5 +1,11 @@
+#include <stdio.h>
 #include "cards.h"
 
-int main(void) {
+char myChar() {
+  return 50;
+}
 
+int main(void) {
+  printf("%c\n", myChar());
+  return 0;
 }
