@@ -1,4 +1,4 @@
-Grading at Wed Aug  1 06:59:59 UTC 2018
+Grading at Wed Aug  1 07:27:10 UTC 2018
 Compiling cards.c
 Testing card_from_letters
 Failed
