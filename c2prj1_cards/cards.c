@@ -12,7 +12,7 @@ void assert_card_valid(card_t c) {
 const char * ranking_to_string(hand_ranking_t r) {
   switch(r) {
   case STRAIGHT_FLUSH:
-    return "Straight Flush";
+    return "STRAIGHT_FLUSH";
     break;
   case FOUR_OF_A_KIND:
     return "Four of a Kind";
