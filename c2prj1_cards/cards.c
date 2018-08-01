@@ -86,8 +86,24 @@ void print_card(card_t c) {
 
 card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
-  temp.value = value_let;
-  temp.suit = suit_let;
+  if (value_let==48) {
+    temp.value = 10;
+  }
+  else if (value_let>49 && value_let<58) {
+    temp.value = value_let - 48;
+  }
+  else if (value_let==74) {
+    temp.value = 11;
+  }
+  else if (value_let==81) {
+    temp.value = 12;
+  }
+  else if (value_let==75) {
+    temp.value = 13;
+  }
+  else if (value_let==65) {
+    temp.value = 14;
+  }
   assert_card_valid(temp);
   return temp;
 }
@@ -96,16 +112,16 @@ card_t card_from_num(unsigned c) {
   card_t temp;
   temp.value = 2 + (c % 13);
   if (c < 13) {
-    temp.suit = DIAMONDS;
+    temp.suit = SPADES;
   }
-  else if (c <26) {
-    temp.suit = CLUBS;
-  }
-  else if (c < 39) {
+  else if (c>=13 && c <26) {
     temp.suit = HEARTS;
   }
-  else if (c < 52) {
-    temp.suit = SPADES;
+  else if (c>=26 && c < 39) {
+    temp.suit = CLUBS;
+  }
+  else if (c>=39 && c < 52) {
+    temp.suit = DIAMONDS;
   }
   assert_card_valid(temp);
   return temp;
