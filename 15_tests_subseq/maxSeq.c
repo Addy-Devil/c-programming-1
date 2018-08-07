@@ -16,38 +16,27 @@ size_t maxSeq(int * array, int n) {
     // if the ith element is greater than the (i-1)th
     // element, increment current sequence length
     if (array[i] > array[i-1]) {
-      printf("array[%d] > array[%d]\n", i, i-1);
+      //printf("array[%d] > array[%d]\n", i, i-1);
       seqLength++;
-      printf("seqLength = %d\n", (int)seqLength);
-      // if we have checked all the items in the array
-      // and last element of the array is part of the
-      // largest strictly increasing sequence,
-      // set the length of the max sequence
+      //printf("seqLength = %d\n", (int)seqLength);
+      // if current sequence length is longer than
+      // the maximum sequence length, update the longest
+      // sequence length
       if (seqLength > maxLength) {
         maxLength = seqLength;
-	printf("i = %d, maxLength = %d\n", i, (int)maxLength);
+	//printf("i = %d, maxLength = %d\n", i, (int)maxLength);
       }
-    }
-    // otherwise, check if the length of the currrent
-    // sequence is greater than the length of the
-    // longest sequence
+    } // otherwise, reset the current sequence length
+    // to 1
     else {
-      printf("array[%d] <= array[%d]\n", i, i-1);
-      /*
-      if (seqLength > maxLength) {
-	// if the current sequence is longer,
-	// update the max sequence length
-	maxLength = seqLength;
-	printf("maxLength updated to: %d\n", maxLength);
-      }
-      */
+      //printf("array[%d] <= array[%d]\n", i, i-1);
       // reset the length of the current sequence
       seqLength = 1;
-      printf("reset seqLength\n");
+      //printf("reset seqLength\n");
     }
     // increment the array index to check
     i++;
-    printf("i incremented to: %d\n", i);
+    //printf("i incremented to: %d\n", i);
   }
   // return the length of the longest sequence
   return maxLength;
