@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 size_t maxSeq(int * array, int n) {
-  printf("sizeof(array): %d\n", sizeof(array)/sizeof(int));
   // if there are no elements, return NULL
   if (n<1 || array==NULL) {
     return 0;
