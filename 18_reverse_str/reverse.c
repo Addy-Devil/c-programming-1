@@ -4,7 +4,7 @@
 
 void reverse(char * str) {
   //find the length of the string
-  int len = 0;
+  size_t len = 0;
   //printf("Before ++, str: %d\n", *str);
   while (*str != 0) {
     len++;
