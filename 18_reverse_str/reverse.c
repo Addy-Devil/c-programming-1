@@ -3,8 +3,11 @@
 #include <string.h>
 
 void reverse(char * str) {
+  if (str==NULL) {
+    return EXIT_FAILURE;
+  }
   //find the length of the string
-  size_t len = 0;
+  int len = 0;
   //printf("Before ++, str: %d\n", *str);
   while (*str != 0) {
     len++;
