@@ -1,0 +1,64 @@
+Grading at Thu Aug  9 19:55:44 UTC 2018
+**Testing broken implementation 10 **
+-------------------------------------
+
+testAns = -1, not 1 like it should
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+testAns = 49, not 1 like it should
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+testAns = 1, not 0 like it should
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+testAns = 1, not 0 like it should
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+testAns = 0, not 1 like it should
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+testAns = 65535, not -1 like it should
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+testAns = 2, not 1 like it should
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+testAns = 2, not 0 like it should
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+testAns = 3, not 0 like it should
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+testAns = -2, not 1 like it should
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+testAns = 0, not 1 like it should
+
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED
