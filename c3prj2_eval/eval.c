@@ -94,6 +94,9 @@ ssize_t  find_secondary_pair(deck_t * hand,
 }
 
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
+  if (hand->n_cards - index < n) {
+    return 0;
+  }
   int straight_count = 1;
   int ind = index;
   int i = index+1;
@@ -118,28 +121,28 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
       }// end check straight flush
     }// end while iteration
   }
-
-  // check for regular straight
-  straight_count = 1;
-  ind = index;
-  i = index+1;
-  while (i<(hand->n_cards-1)) {
-    if (hand->cards[ind]->value == hand->cards[i]->value + 1) {// cards[index]->value is one greater than the next card's value
-      straight_count++;
-      if (straight_count==n) {
-	return 1;
+  else {
+    // check for regular straight
+    straight_count = 1;
+    ind = index;
+    i = index+1;
+    while (i<(hand->n_cards-1)) {
+      if (hand->cards[ind]->value == hand->cards[i]->value + 1) {// cards[index]->value is one greater than the next card's value
+	straight_count++;
+	if (straight_count==n) {
+	  return 1;
+	}
+	ind = i;
+	i++;
       }
-      ind = i;
-      i++;
-    }
-    else if (hand->cards[ind]->value == hand->cards[i]->value) {//consecutive cards are equal
-      i++; // increment indices, but do not reset straight_count
-    }
-    else { // consecutive cards are neither equal nor one value apart
-      return 0;
-    }// end find straight
-  }// end while iteration
-  
+      else if (hand->cards[ind]->value == hand->cards[i]->value) {//consecutive cards are equal
+	i++; // increment indices, but do not reset straight_count
+      }
+      else { // consecutive cards are neither equal nor one value apart
+	break;
+      }// end find straight
+    }// end while iteration
+  }  
   // if no straight was found, then return 0
   return 0;
 }
@@ -179,7 +182,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
   ans.ranking = what; //set hand ranking
 
   // fill in array of pointers 
-  for (int i=0; i<n; i++) {
+  for (unsigned i=0; i<n; i++) {
     ans.cards[i] = hand->cards[idx+i];
   }
   
@@ -189,7 +192,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
     ans.cards[n+i] = hand->cards[i];
   }
   // fill in the end of ans array with the cards after idx+n in your hand
-  for (int i=idx+n; i<5; i++) {
+  for (unsigned i=idx+n; i<5; i++) {
     ans.cards[i] = hand->cards[i];
   }
 
