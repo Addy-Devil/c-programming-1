@@ -14,7 +14,7 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
     return -1;
   }
   else if ((**cp1).value == (**cp2).value) {
-    if ((**cp1).suit < (**cp2).suit) {
+    if ((**cp1).suit > (**cp2).suit) {
       return -1;
     }
     else {
@@ -111,7 +111,8 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
 	index++; // increment indices, but do not reset straight_count
       }
       else { // consecutive cards are neither equal nor one value apart
-	return 0;
+	straight_count = 1;
+	index++;
       }
     }// end no flush
     else { // yes flush
@@ -128,7 +129,8 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
 	index++;
       }
       else {// consecutive cards are neither in straight flush order nor equal in value
-	return 0;
+	straight_count=1;
+	index++;
 	/*
 	straight_count = 1; // reset straight_count
 	index++; // increment index
