@@ -100,7 +100,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
   while (index<hand->n_cards - 1) {
     // check if there is a flush
     if (fs==NUM_SUITS) { //no flush
-      if (hand->cards[index]->value == hand->cards[index+1]->value + 1) {// cards[index]->value is one greater than the next cards value
+      if (hand->cards[index]->value == hand->cards[index+1]->value + 1) {// cards[index]->value is one greater than the next card's value
 	straight_count++;
 	if (straight_count==n) {
 	  return 1;
@@ -112,10 +112,6 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
       }
       else { // consecutive cards are neither equal nor one value apart
 	return 0;
-	/*
-	straight_count = 1; //reset straight_count
-	index++; //check next indices
-	*/
       }
     }// end no flush
     else { // yes flush
@@ -208,16 +204,16 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   // call evaluate_hand on each hand
   hand_eval_t eval1 = evaluate_hand(hand1);
   hand_eval_t eval2 = evaluate_hand(hand2);
-  if (eval1.ranking > eval2.ranking) {
+  if (eval1.ranking < eval2.ranking) {
     return 1;
   }
-  if (eval1.ranking < eval2.ranking) {
+  if (eval1.ranking > eval2.ranking) {
     return -1;
   }
 
   for (int i=0; i<5; i++) {
     if (eval1.cards[i]->value != eval2.cards[i]->value) {
-      if (eval1.cards[i]->value > eval2.cards[i]->value) {
+      if (eval1.cards[i]->value < eval2.cards[i]->value) {
 	return 1;
       }
       else {
