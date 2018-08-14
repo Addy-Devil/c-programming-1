@@ -94,11 +94,11 @@ ssize_t  find_secondary_pair(deck_t * hand,
 }
 
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
+  int straight_count = 1;
+  int ind = index;
+  int i = index+1;
   // check if there is a flush
   if (fs!=NUM_SUITS) { // yes flush, so check for straight flush
-    int straight_count = 1;
-    int ind = index;
-    int i = index+1;
     while(i<(hand->n_cards - 1)) {
       if (hand->cards[ind]->value==hand->cards[i]->value+1 &&
 	  hand->cards[ind]->suit==fs &&
@@ -114,31 +114,31 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
 	i++;
       }
       else {// consecutive cards are neither in straight flush order nor equal in value
-        return 0;
+        break;
       }// end check straight flush
     }// end while iteration
   }
-  else { // check for regular straight
-    int straight_count = 1;
-    int ind = index;
-    int i = index+1;
-    while (i<(hand->n_cards-1)) {
-      if (hand->cards[ind]->value == hand->cards[i]->value + 1) {// cards[index]->value is one greater than the next card's value
-	straight_count++;
-	if (straight_count==n) {
-	  return 1;
-	}
-	ind = i;
-	i++;
+
+  // check for regular straight
+  straight_count = 1;
+  ind = index;
+  i = index+1;
+  while (i<(hand->n_cards-1)) {
+    if (hand->cards[ind]->value == hand->cards[i]->value + 1) {// cards[index]->value is one greater than the next card's value
+      straight_count++;
+      if (straight_count==n) {
+	return 1;
       }
-      else if (hand->cards[ind]->value == hand->cards[i]->value) {//consecutive cards are equal
-	i++; // increment indices, but do not reset straight_count
-      }
-      else { // consecutive cards are neither equal nor one value apart
-	return 0;
-      }// end find straight
-    }// end while iteration
-  }// end no flush
+      ind = i;
+      i++;
+    }
+    else if (hand->cards[ind]->value == hand->cards[i]->value) {//consecutive cards are equal
+      i++; // increment indices, but do not reset straight_count
+    }
+    else { // consecutive cards are neither equal nor one value apart
+      return 0;
+    }// end find straight
+  }// end while iteration
   
   // if no straight was found, then return 0
   return 0;
