@@ -147,14 +147,16 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs) {
 }
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
+  int straight = is_n_length_straight_at(hand,index,fs,5);
   if (hand->cards[index]->value==VALUE_ACE &&
-      hand->cards[hand->n_cards-1]->value==2) {// only check for ace-low straight if there is an ace at the current index and a 2 at the last index of the cards array
+      hand->cards[hand->n_cards-1]->value==2 &&
+      straight==0) {// only check for ace-low straight if there is an ace at the current index and a 2 at the last index of the cards array
     if (is_ace_low_straight_at(hand, index, fs)==1) {
       return -1;
     }
   }
 
-  if (is_n_length_straight_at(hand, index, fs, 5)==1) {
+  if (straight==1) {
     return 1;
   }
 
