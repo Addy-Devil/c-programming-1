@@ -96,25 +96,23 @@ ssize_t  find_secondary_pair(deck_t * hand,
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
   // keep track of how many cards in a row there are
   int straight_count = 1;
-  int i = index;
+  int i = index+1;
   // check if there is a flush
   if (fs==NUM_SUITS) { //no flush
     while (i<(hand->n_cards - 1)) {
-      if (hand->cards[index]->value == hand->cards[i+1]->value + 1) {// cards[index]->value is one greater than the next card's value
+      if (hand->cards[index]->value == hand->cards[i]->value + 1) {// cards[index]->value is one greater than the next card's value
 	straight_count++;
 	if (straight_count==n) {
 	  return 1;
 	}
-	index++;
+	index += i;
 	i++;
       }
       else if (hand->cards[index]->value == hand->cards[i+1]->value) {//consecutive cards are equal
 	i++; // increment indices, but do not reset straight_count
       }
       else { // consecutive cards are neither equal nor one value apart
-	straight_count = 1;
-	index = i;
-	i++;
+	return 0;
       }
     }
   }// end no flush
@@ -126,14 +124,14 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
 	if (straight_count==n) {
 	  return 1;
 	}
+	index += i;
 	i++;
       }
       else if (hand->cards[i]->value==hand->cards[i+1]->value) {// consecutive cards are equal
 	i++;
       }
       else {// consecutive cards are neither in straight flush order nor equal in value
-	straight_count=1;
-	i++;
+        return 0;
       }// end check straight flush
     }// end while iteration
   }// end yes flush
@@ -142,24 +140,26 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
 }
 
 int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs) {
-  if (is_n_length_straight_at(hand, index, fs, 4)==1) {
-    return 1;
+  if (hand->cards[index]->value==VALUE_ACE &&
+      hand->cards[hand->n_cards-1]->value==2) {
+    for (int i=0; i<hand->n_cards; i++) {
+      if (hand->cards[i]->value==5) {
+	if (is_n_length_straight_at(hand, i, fs, 4)==1) {
+	  return 1;
+	}
+      }
+    }
   }
   return 0;
 }
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
-  int straight = is_n_length_straight_at(hand,index,fs,5);
-  if (hand->cards[index]->value==VALUE_ACE &&
-      hand->cards[hand->n_cards-1]->value==2 &&
-      straight==0) {// only check for ace-low straight if there is an ace at the current index and a 2 at the last index of the cards array
-    if (is_ace_low_straight_at(hand, index, fs)==1) {
-      return -1;
-    }
+  if (is_n_length_straight_at(hand,index,fs,5)==1) {
+    return 1;
   }
 
-  if (straight==1) {
-    return 1;
+  if (is_ace_low_straight_at(hand, index, fs)==1) {
+    return -1;
   }
 
   return 0;
