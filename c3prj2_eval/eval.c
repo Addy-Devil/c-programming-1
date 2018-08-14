@@ -213,7 +213,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 
   for (int i=0; i<5; i++) {
     if (eval1.cards[i]->value != eval2.cards[i]->value) {
-      if (eval1.cards[i]->value < eval2.cards[i]->value) {
+      if (eval1.cards[i]->value > eval2.cards[i]->value) {
 	return 1;
       }
       else {
