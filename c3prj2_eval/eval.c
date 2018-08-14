@@ -117,7 +117,6 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
     }// end no flush
     else { // yes flush
       if (hand->cards[index]->value==hand->cards[index+1]->value+1 &&
-	  hand->cards[index]->suit==fs &&
 	  hand->cards[index+1]->suit==fs) {// check straight flush
 	straight_count++;
 	if (straight_count==n) {
@@ -131,14 +130,11 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
       else {// consecutive cards are neither in straight flush order nor equal in value
 	straight_count=1;
 	index++;
-	/*
-	straight_count = 1; // reset straight_count
-	index++; // increment index
-	*/
       }// end check straight flush
     }// end yes flush
   }// end while iteration
 
+  // if no straight was found, then return 0
   return 0;
 }
 
