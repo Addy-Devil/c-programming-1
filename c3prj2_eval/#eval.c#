@@ -94,80 +94,71 @@ ssize_t  find_secondary_pair(deck_t * hand,
 }
 
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
-  if (hand->n_cards - index < n || hand->n_cards < 5) {
-    return 0;
-  }
+  // keep track of how many cards in a row there are
   int straight_count = 1;
-  int ind = index;
   int i = index+1;
   // check if there is a flush
-  if (fs!=NUM_SUITS) { // yes flush, so check for straight flush
-    while(i<(hand->n_cards - 1)) {
-      if (hand->cards[ind]->value==hand->cards[i]->value+1 &&
-	  hand->cards[ind]->suit==fs &&
-	  hand->cards[i]->suit==fs) {// check straight flush
+  if (fs==NUM_SUITS) { //no flush
+    while (i<(hand->n_cards - 1)) {
+      if (hand->cards[index]->value == hand->cards[i]->value + 1) {// cards[index]->value is one greater than the next card's value
 	straight_count++;
 	if (straight_count==n) {
 	  return 1;
 	}
-	ind = i;
+	index += i;
 	i++;
       }
-      else if (hand->cards[ind]->value==hand->cards[i]->value) {// consecutive cards are equal
-	i++;
-      }
-      else {// consecutive cards are neither in straight flush order nor equal in value
-        break;
-      }// end check straight flush
-    }// end while iteration
-  }
-  else {
-    // check for regular straight
-    straight_count = 1;
-    ind = index;
-    i = index+1;
-    while (i<(hand->n_cards-1)) {
-      if (hand->cards[ind]->value == hand->cards[i]->value + 1) {// cards[index]->value is one greater than the next card's value
-	straight_count++;
-	if (straight_count==n) {
-	  return 1;
-	}
-	ind = i;
-	i++;
-      }
-      else if (hand->cards[ind]->value == hand->cards[i]->value) {//consecutive cards are equal
+      else if (hand->cards[index]->value == hand->cards[i+1]->value) {//consecutive cards are equal
 	i++; // increment indices, but do not reset straight_count
       }
       else { // consecutive cards are neither equal nor one value apart
-	break;
-      }// end find straight
+	return 0;
+      }
+    }
+  }// end no flush
+  else { // yes flush
+    while(i<(hand->n_cards - 1)) {
+      if (hand->cards[i]->value==hand->cards[i+1]->value+1 &&
+	  hand->cards[i+1]->suit==fs) {// check straight flush
+	straight_count++;
+	if (straight_count==n) {
+	  return 1;
+	}
+	index += i;
+	i++;
+      }
+      else if (hand->cards[i]->value==hand->cards[i+1]->value) {// consecutive cards are equal
+	i++;
+      }
+      else {// consecutive cards are neither in straight flush order nor equal in value
+        return 0;
+      }// end check straight flush
     }// end while iteration
-  }  
+  }// end yes flush
   // if no straight was found, then return 0
   return 0;
 }
 
 int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs) {
-  if (hand->cards[index]->value==VALUE_ACE &&
-      hand->cards[hand->n_cards-1]->value==2) {
-    for (size_t i=0; i<hand->n_cards; i++) {
-      if (hand->cards[i]->value==5) {
-	if (is_n_length_straight_at(hand, i, fs, 4)==1) {
-	  return 1;
-	}
-      }
-    }
+  if (hand->cards[index]->value== V
+  if (is_n_length_straight_at(hand, index, fs, 4)==1) {
+    return 1;
   }
   return 0;
 }
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
-  if (is_n_length_straight_at(hand,index,fs,5)==1) {
-    return 1;
+  int straight = is_n_length_straight_at(hand,index,fs,5);
+  if (hand->cards[index]->value==VALUE_ACE &&
+      hand->cards[hand->n_cards-1]->value==2 &&
+      straight==0) {// only check for ace-low straight if there is an ace at the current index and a 2 at the last index of the cards array
+    if (is_ace_low_straight_at(hand, index, fs)==1) {
+      return -1;
+    }
   }
 
-  if (is_ace_low_straight_at(hand, index, fs)==1) {
-    return -1;
+  if (straight==1) {
+    return 1;
   }
 
   return 0;
@@ -182,7 +173,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
   ans.ranking = what; //set hand ranking
 
   // fill in array of pointers 
-  for (unsigned i=0; i<n; i++) {
+  for (int i=0; i<n; i++) {
     ans.cards[i] = hand->cards[idx+i];
   }
   
@@ -192,7 +183,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
     ans.cards[n+i] = hand->cards[i];
   }
   // fill in the end of ans array with the cards after idx+n in your hand
-  for (unsigned i=idx+n; i<5; i++) {
+  for (int i=idx+n; i<5; i++) {
     ans.cards[i] = hand->cards[i];
   }
 
