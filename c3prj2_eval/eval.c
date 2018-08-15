@@ -94,9 +94,6 @@ ssize_t  find_secondary_pair(deck_t * hand,
 }
 
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
-  if (hand->n_cards - index < n || hand->n_cards < 5) {
-    return 0;
-  }
   int straight_count = 1;
   int ind = index;
   int i = index+1;
@@ -188,8 +185,8 @@ hand_eval_t build_hand_from_match(deck_t * hand,
   
   // fill in best remaining cards
   // fill in end of ans array with the cards before idx in your hand
-  for (int i=0; i<idx; i++) {
-    ans.cards[n+i] = hand->cards[i];
+  for (int i=n; i<idx; i++) {
+    ans.cards[i] = hand->cards[i];
   }
   // fill in the end of ans array with the cards after idx+n in your hand
   for (unsigned i=idx+n; i<5; i++) {
