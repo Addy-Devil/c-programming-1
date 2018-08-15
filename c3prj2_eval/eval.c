@@ -99,7 +99,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
   int i = index+1;
   // check if there is a flush
   if (fs!=NUM_SUITS) { // yes flush, so check for straight flush
-    while(i<(hand->n_cards - 1)) {
+    while(i<hand->n_cards) {
       if (hand->cards[ind]->value==hand->cards[i]->value+1 &&
 	  hand->cards[ind]->suit==fs &&
 	  hand->cards[i]->suit==fs) {// check straight flush
@@ -123,7 +123,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
     straight_count = 1;
     ind = index;
     i = index+1;
-    while (i<(hand->n_cards-1)) {
+    while (i<hand->n_cards) {
       if (hand->cards[ind]->value == hand->cards[i]->value + 1) {// cards[index]->value is one greater than the next card's value
 	straight_count++;
 	if (straight_count==n) {
