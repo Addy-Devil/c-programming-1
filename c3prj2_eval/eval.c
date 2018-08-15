@@ -185,7 +185,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
   
   // fill in best remaining cards
   // fill in end of ans array with the cards before idx in your hand
-  for (int i=0; i<idx; i++) {
+  for (unsigned i=0; i<idx; i++) {
     ans.cards[n+i] = hand->cards[i];
   }
   // fill in the end of ans array with the cards after idx+n in your hand
@@ -207,7 +207,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   if (eval1.ranking < eval2.ranking) {
     return 1;
   }
-  if (eval1.ranking > eval2.ranking) {
+  if (eval1.ranking >  eval2.ranking) {
     return -1;
   }
 
