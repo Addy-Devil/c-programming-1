@@ -1,3 +1,5 @@
-breaker:
-	gcc -o breaker --std=gnu99 breaker.c
+CC=gcc
+CFLAGS=-std=gnu99 -Wall
 
+breaker: breaker.c
+	$(CC) -o breaker $(CFLAGS) breaker.c
