@@ -17,7 +17,7 @@ int maxValueAt(int * arr, unsigned size) {
 
 void guessKey(FILE * f) {
   int c;
-  int * crypt[26] = {0};
+  int crypt[26] = {0};
   while( (c = fgetc(f)) != EOF) {
     if (isalpha(c)) {
       c -= 'a';
