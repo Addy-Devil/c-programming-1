@@ -20,7 +20,13 @@ int maxValueAt(int * arr, unsigned size) {
 }
 
 int calcKey(int guessE) {
-  int key = guessE - 4;
+  int key = 0;
+  if (guessE >= 4) {
+    key = guessE - 4;
+  }
+  else {
+    key = 26 - guessE;
+  }
   return key;
 }
 
