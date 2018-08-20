@@ -25,7 +25,7 @@ int calcKey(int guessE) {
     key = guessE - 4;
   }
   else {
-    key = 25 - guessE;
+    key = 4 - guessE;
   }
   return key;
 }
