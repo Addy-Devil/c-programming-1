@@ -3,10 +3,6 @@
 #include <ctype.h>
 #include <limits.h>
 
-int lotsofshit() {
-  return 100;
-}
-
 int maxValueAt(int * arr, unsigned size) {
   int max = INT_MIN;
   int maxIndex = 0;
@@ -25,7 +21,7 @@ int calcKey(int guessE) {
     key = guessE - 4;
   }
   else {
-    key = 4 - guessE;
+    key = 26 - (guessE + 4);
   }
   return key;
 }
@@ -33,12 +29,6 @@ int calcKey(int guessE) {
 void guessKey(FILE * f) {
   int c;
   int crypt[26] = {0};
-  /*
-  printf("pre maxIndex find:\n");
-  for (int i=0; i<26; i++) {
-    printf("crypt[%d] = %d\n", i, crypt[i]);
-  }
-  */
   while( (c = fgetc(f)) != EOF) {
     if (isalpha(c)) {
       c = tolower(c);
@@ -46,12 +36,6 @@ void guessKey(FILE * f) {
       crypt[c] += 1;
     }
   }
-  /*
-  printf("post maxIndex find:\n");
-  for (int i=0; i<26; i++) {
-    printf("crypt[%d] = %d\n", i, crypt[i]);
-  }
-  */
   int guessE = maxValueAt(crypt, 26);
 
   int key = calcKey(guessE);
