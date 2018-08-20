@@ -15,6 +15,10 @@ int maxValueAt(int * arr, unsigned size) {
   return maxIndex;
 }
 
+int guessKey(int guessE) {
+  return 26 - guessE + 4;
+}
+
 void guessKey(FILE * f) {
   int c;
   int crypt[26] = {0};
@@ -24,7 +28,9 @@ void guessKey(FILE * f) {
       crypt[c] += 1;
     }
   }
-  int key = maxValueAt(crypt, 26);
+  int guessE = maxValueAt(crypt, 26);
+
+  int key = guessKey(guessE);
   
   printf("%d\n", key);
 }
