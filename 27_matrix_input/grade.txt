@@ -1,13 +1,6 @@
-Grading at Tue Aug 21 05:47:33 UTC 2018
+Grading at Tue Aug 21 05:48:07 UTC 2018
 Attempting to compile rotateMatrix.c
 rotateMatrix.c: In function ‘main’:
-rotateMatrix.c:23:17: error: expected ‘]’ before ‘,’ token
-   char matrix[10, 10];
-                 ^
-rotateMatrix.c:24:15: error: ‘matrix’ undeclared (first use in this function)
-   while(fgets(matrix[height], MATRIX_DIM, f) != NULL) {
-               ^
-rotateMatrix.c:24:15: note: each undeclared identifier is reported only once for each function it appears in
 rotateMatrix.c:26:9: error: implicit declaration of function ‘strchr’ [-Werror=implicit-function-declaration]
      if (strchr(matrix[height], "\n") == NULL) {
          ^
