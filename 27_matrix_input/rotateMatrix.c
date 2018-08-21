@@ -27,19 +27,20 @@ int main(int argc, char ** argv) {
   char line[LINE_LENGTH];
   char matrix[MATRIX_DIM][MATRIX_DIM];
   while(fgets(line, LINE_LENGTH, f) != NULL) {
-    /*
-    for (int i=0; i<15; i++) {
-      printf("%d: %c\n", i+1, line[i]);
-    }
-    */
     // If line has more than 10 characters
     if (strchr(line, '\n') == NULL) {
       fprintf(stderr, "Input matrix line (%d)'s width is more than 10 characters.\n", height);
       return EXIT_FAILURE;
     }
     // If line has less than 10 characters
-    if (*strchr(line, '\n') < 10) {
-      fprintf(stderr, "Input matrix line (%d)'s width is less than 10 characters.\n", height);
+    int whereIsNL = 0;
+    for (int n=0; n<LINE_LENGTH; n++) {
+      if (line[n] == '\n') {
+	whereIsNL = n;
+      }
+    }
+    if (whereIsNL < 10) {
+      fprintf(stderr, "Input matrix line (%d)'s width is %d, which is less than 10 characters.\n", height, whereIsNL);
       return EXIT_FAILURE;
     }
     for (int i=0; i<10; i++) {
