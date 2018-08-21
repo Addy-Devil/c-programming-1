@@ -1,0 +1,31 @@
+Grading at Tue Aug 21 05:45:42 UTC 2018
+Attempting to compile rotateMatrix.c
+rotateMatrix.c: In function ‘main’:
+rotateMatrix.c:23:25: error: expected ‘]’ before ‘,’ token
+   char matrix[MATRIX_DIM, MATRIX_DIM];
+                         ^
+rotateMatrix.c:24:15: error: ‘matrix’ undeclared (first use in this function)
+   while(fgets(matrix[height], MATRIX_DIM, f) != NULL) {
+               ^
+rotateMatrix.c:24:15: note: each undeclared identifier is reported only once for each function it appears in
+rotateMatrix.c:26:9: error: implicit declaration of function ‘strchr’ [-Werror=implicit-function-declaration]
+     if (strchr(matrix[height], "\n") == NULL) {
+         ^
+rotateMatrix.c:26:9: error: incompatible implicit declaration of built-in function ‘strchr’ [-Werror]
+rotateMatrix.c:26:9: note: include ‘<string.h>’ or provide a declaration of ‘strchr’
+rotateMatrix.c:26:32: error: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Werror=int-conversion]
+     if (strchr(matrix[height], "\n") == NULL) {
+                                ^
+rotateMatrix.c:26:32: note: expected ‘int’ but argument is of type ‘char *’
+rotateMatrix.c:31:9: error: incompatible implicit declaration of built-in function ‘strchr’ [-Werror]
+     if (strchr(matrix[height], "\0") != NULL) {
+         ^
+rotateMatrix.c:31:9: note: include ‘<string.h>’ or provide a declaration of ‘strchr’
+rotateMatrix.c:31:32: error: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Werror=int-conversion]
+     if (strchr(matrix[height], "\0") != NULL) {
+                                ^
+rotateMatrix.c:31:32: note: expected ‘int’ but argument is of type ‘char *’
+cc1: all warnings being treated as errors
+The code did not compile!
+
+Overall Grade: F
