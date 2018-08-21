@@ -38,7 +38,7 @@ int main(int argc, char ** argv) {
       return EXIT_FAILURE;
     }
     // If line has less than 10 characters
-    if (*strchr(line, '\n') < 10) {
+    if (*strchr(line, '\n') < 9) {
       fprintf(stderr, "Input matrix line (%d)'s width is less than 10 characters.\n", height);
       return EXIT_FAILURE;
     }
