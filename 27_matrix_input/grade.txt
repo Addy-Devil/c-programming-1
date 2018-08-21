@@ -1,23 +1,20 @@
-Grading at Tue Aug 21 05:48:07 UTC 2018
+Grading at Tue Aug 21 05:49:21 UTC 2018
 Attempting to compile rotateMatrix.c
 rotateMatrix.c: In function ‘main’:
-rotateMatrix.c:26:9: error: implicit declaration of function ‘strchr’ [-Werror=implicit-function-declaration]
-     if (strchr(matrix[height], "\n") == NULL) {
-         ^
-rotateMatrix.c:26:9: error: incompatible implicit declaration of built-in function ‘strchr’ [-Werror]
-rotateMatrix.c:26:9: note: include ‘<string.h>’ or provide a declaration of ‘strchr’
-rotateMatrix.c:26:32: error: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Werror=int-conversion]
+rotateMatrix.c:27:32: error: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Werror=int-conversion]
      if (strchr(matrix[height], "\n") == NULL) {
                                 ^
-rotateMatrix.c:26:32: note: expected ‘int’ but argument is of type ‘char *’
-rotateMatrix.c:31:9: error: incompatible implicit declaration of built-in function ‘strchr’ [-Werror]
-     if (strchr(matrix[height], "\0") != NULL) {
-         ^
-rotateMatrix.c:31:9: note: include ‘<string.h>’ or provide a declaration of ‘strchr’
-rotateMatrix.c:31:32: error: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Werror=int-conversion]
+In file included from rotateMatrix.c:3:0:
+/usr/include/string.h:231:14: note: expected ‘int’ but argument is of type ‘char *’
+ extern char *strchr (const char *__s, int __c)
+              ^
+rotateMatrix.c:32:32: error: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Werror=int-conversion]
      if (strchr(matrix[height], "\0") != NULL) {
                                 ^
-rotateMatrix.c:31:32: note: expected ‘int’ but argument is of type ‘char *’
+In file included from rotateMatrix.c:3:0:
+/usr/include/string.h:231:14: note: expected ‘int’ but argument is of type ‘char *’
+ extern char *strchr (const char *__s, int __c)
+              ^
 cc1: all warnings being treated as errors
 The code did not compile!
 
