@@ -1,9 +1,9 @@
-Grading at Tue Aug 21 05:45:42 UTC 2018
+Grading at Tue Aug 21 05:47:33 UTC 2018
 Attempting to compile rotateMatrix.c
 rotateMatrix.c: In function ‘main’:
-rotateMatrix.c:23:25: error: expected ‘]’ before ‘,’ token
-   char matrix[MATRIX_DIM, MATRIX_DIM];
-                         ^
+rotateMatrix.c:23:17: error: expected ‘]’ before ‘,’ token
+   char matrix[10, 10];
+                 ^
 rotateMatrix.c:24:15: error: ‘matrix’ undeclared (first use in this function)
    while(fgets(matrix[height], MATRIX_DIM, f) != NULL) {
                ^
