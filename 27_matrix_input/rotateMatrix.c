@@ -20,7 +20,7 @@ int main(int argc, char ** argv) {
   }
   // check that the input is correct
   int height = 0; // track how many lines matrix has
-  char matrix[10, 10];
+  char matrix[10][10];
   while(fgets(matrix[height], MATRIX_DIM, f) != NULL) {
     // If line has more than 10 characters
     if (strchr(matrix[height], "\n") == NULL) {
