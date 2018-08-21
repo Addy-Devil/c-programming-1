@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// size of square array
-int n = 10;
 
 // transpose
-void transpose(char matrix[n][n]) {
-  for (int r=0; r<n; r++) {
-    for (int c=r+1; c<n; c++) {
+void transpose(char matrix[10][10]) {
+  for (int r=0; r<10; r++) {
+    for (int c=r+1; c<10; c++) {
       char tmp = matrix[r][c];
       matrix[r][c] = matrix[c][r];
       matrix[c][r] = tmp;
@@ -16,17 +14,17 @@ void transpose(char matrix[n][n]) {
 }
 
 // reverse columns
-void reverseColumns(char matrix[n][n]) {
-  for (int c=0; c<n; c++) {
-    for (int r=0; r<n/2; r++) {
+void reverseColumns(char matrix[10][10]) {
+  for (int c=0; c<10; c++) {
+    for (int r=0; r<10/2; r++) {
       char tmp = matrix[c][r];
-      matrix[c][r] = matrix[c][n-r-1];
-      matrix[c][n-r-1] = tmp;
+      matrix[c][r] = matrix[c][10-r-1];
+      matrix[c][10-r-1] = tmp;
     }
   }
 }
 
-void rotate(char matrix[n][n]) {
+void rotate(char matrix[10][10]) {
   transpose(matrix);
   reverseColumns(matrix);
 }
