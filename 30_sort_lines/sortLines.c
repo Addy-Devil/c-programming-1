@@ -26,32 +26,28 @@ int main(int argc, char ** argv) {
   else {
     size_t i = 1;
     while (i < argc) {
-      char * line = NULL;
-      size_t sz = 0;
       FILE * f = fopen(argv[i], "r");
       if (f==NULL) {
 	fprintf(stderr, "Failed to open file: %s\n", argv[i]);
 	return EXIT_FAILURE;
       }
-
-      // get the number of lines to read and malloc an array to hold them
-      /*
-      size_t numLines = getNumLines(f);
-      printf("num lines in file: %s : %zu\n", argv[i],  numLines);
-      */
       // write each line into the lines array
       size_t j = 0;
-      ssize_t lineLen = 0;
-      size_t numLines = 1;
-      char ** lines = malloc(numLines * sizeof(char*));
-      while((lineLen=getline(&line, &sz, f)) > 0) {
-	lines[j] = malloc((lineLen+1) * sizeof(char));
+      //ssize_t lineLen = 0;
+      //size_t numLines = 0;
+      char ** lines = NULL;
+      char * line = NULL;
+      size_t sz = 0;
+      while(getline(&line, &sz, f) >= 0) {
+	lines = realloc(lines, (j+1) * sizeof(*lines));
+	//lines[j] = malloc((lineLen+1) * sizeof(char));
 	lines[j] = line;
+	line = NULL;
+	printf("for lines[%zu]: sz = %zu\n", j, sz);
+	printf("%s\n", lines[j]);
 	j++;
-	numLines++;
-	lines = realloc(lines, numLines * sizeof(char*));
       }
-
+      free(line);
       // if the file has no lines of content, then j will not have incremented
       // return an error
       if (j == 0) {
@@ -59,34 +55,18 @@ int main(int argc, char ** argv) {
 	return EXIT_FAILURE;
       }
       
-      // while loop right above adds 1 too many to numLines and reallocs to `lines`,
-      // so take them away
-      if (numLines > 1) {
-	numLines--;
-	lines = realloc(lines, numLines * sizeof(char*));
-      }
-      
-      // DELETE THIS LATER
-      // check array has correct info in it...
-      printf("Pre sorted array.\n");
-      for (int k=0;k<numLines;k++) {
-	printf("%s", lines[k]);
-      }
-      // DELETE THIS LATER
-      
-      // free last line from getline
-      free(line);
       // sort the data
-      sortData(lines, numLines);
+      sortData(lines, j);
 
       // print the lines that have been sorted
-      for (j=0; j<numLines; j++) {
-	printf("%s\n", lines[j]);
+      int k;
+      for (k=0; k<j; k++) {
+	printf("%s\n", lines[k]);
       }
 
       // free each line of lines
-      for (j=0; j<numLines; j++) {
-	free(lines[j]);
+      for (k=0; k<j; k++) {
+	free(lines[k]);
       }
       // free malloced lines array
       free(lines);
