@@ -21,6 +21,7 @@ size_t getNumLines(FILE * f) {
   char * line = NULL;
   size_t sz = 0;
   while(getline(&line, &sz, f) > 0) {
+    printf("In getNumLines: %s\n", line);
     n++;
   }
   free(line);
@@ -29,6 +30,20 @@ size_t getNumLines(FILE * f) {
 }
 
 int main(int argc, char ** argv) {
+  /*
+  if (argc==1) {
+    //read from stdin
+    FILE * f = stdin;
+  }
+  else {
+    //read from argvs
+    FILE * f = fopen(argv[1], "r");
+  }
+  */
+
+  // store lines of input so they can be sorted
+  
+  
   
   //WRITE YOUR CODE HERE!
   if(argc==1) {
@@ -63,8 +78,8 @@ int main(int argc, char ** argv) {
     free(lines);
   }
   else {
-    size_t i = 2;
-    while (i <= argc) {
+    size_t i = 1;
+    while (i < argc) {
       char * line = NULL;
       size_t sz = 0;
       FILE * f = fopen(argv[i], "r");
@@ -75,12 +90,24 @@ int main(int argc, char ** argv) {
 
       // get the number of lines to read and malloc an array to hold them
       size_t numLines = getNumLines(f);
-      char ** lines = malloc(numLines * sizeof(*lines));
+      if (fclose(f) != 0) {
+	perror("File did not close.");
+	return EXIT_FAILURE;
+      }
+      printf("num lines in file: %s : %zu\n", argv[i],  numLines);
+      char ** lines = malloc(numLines * sizeof(char*));
       // write each line into the lines array
       size_t j = 0;
-      while(getline(&line, &sz, f) > 0) {
+      size_t lineLen = 0;
+      f = fopen(argv[i], "r");
+      while((lineLen=getline(&line, &sz, f)) > 0) {
+	lines[j] = malloc((lineLen+1) * sizeof(char));
 	lines[j] = line;
 	j++;
+      }
+      printf("Pre sorted array.\n");
+      for (int k=0;k<numLines;k++) {
+	printf("%s\n", lines[k]);
       }
       // free last line from getline
       free(line);
@@ -91,7 +118,11 @@ int main(int argc, char ** argv) {
       for (j=0; j<numLines; j++) {
 	printf("%s\n", lines[j]);
       }
-    
+
+      // free each line of lines
+      for (j=0; j<numLines; j++) {
+	free(lines[j]);
+      }
       // free malloced lines array
       free(lines);
       i++;
