@@ -42,8 +42,25 @@ void addRandomMine(board_t * b) {
 
 board_t * makeBoard(int w, int h, int numMines) {
   //WRITE ME!
-  return NULL;
+  board_t * b = malloc(sizeof(*b));
+  b->width = w;
+  b->height = h;
+  b->totalMines = numMines;
+  b->board = calloc(h, h * sizeof(int*));
+  for (int i=0; i<h; i++) {
+    b->board[i] = realloc(b->board[i], w * sizeof(int*));
+  }
+  for (int r=0;r<h;r++) {
+    for (int c=0;c<w;c++) {
+      b->board[r][c] = UNKNOWN;
+    }
+  }
+  for (int m=0;m<numMines;m++) {
+    addRandomMine(b);
+  }
+  return b;
 }
+
 void printBoard(board_t * b) {    
   int found = 0;
   printf("    ");
@@ -94,10 +111,136 @@ void printBoard(board_t * b) {
   }
   printf("\nFound %d of %d mines\n", found, b->totalMines);
 }
+
 int countMines(board_t * b, int x, int y) {
   //WRITE ME!
-  return 0;
+  int nMines = 0;
+  //check corner cases
+  if (x==0 && y==0) {// top left
+    if(IS_MINE(b->board[y][x+1])) {
+      nMines++;
+    }
+    if(IS_MINE(b->board[y+1][x])) {
+      nMines++;
+    }
+    if(IS_MINE(b->board[y+1][x+1])) {
+      nMines++;
+    }
+  }
+  else if (x==0 && y==(b->height)-1) {//bottom left
+    if(IS_MINE(b->board[y-1][x])) {
+      nMines++;
+    }
+    if(IS_MINE(b->board[y-1][x+1])) {
+      nMines++;
+    }
+    if(IS_MINE(b->board[y][x+1])) {
+      nMines++;
+    }
+  }
+  else if (x==(b->width)-1 && y==0) {//top right
+    if(IS_MINE(b->board[y][x-1])) {
+      nMines++;
+    }
+    if(IS_MINE(b->board[y+1][x-1])) {
+      nMines++;
+    }
+    if(IS_MINE(b->board[y+1][x])) {
+      nMines++;
+    }
+  }
+  else if (x==(b->width)-1 && y==(b->height)-1) {//bottom right
+    if(IS_MINE(b->board[y-1][x-1])) {
+      nMines++;
+    }
+    if(IS_MINE(b->board[y-1][x])) {
+      nMines++;
+    }
+    if(IS_MINE(b->board[y][x-1])) {
+      nMines++;
+    }
+  }
+  else if (x==0) {//left side non corner
+    for (int i=0; i<2;i++) {
+      if (IS_MINE(b->board[y-1][i])) {
+	nMines++;
+      }
+    }
+    if (IS_MINE(b->board[y][x+1])) {
+      nMines++;
+    }
+    for (int i=0; i<2;i++) {
+      if (IS_MINE(b->board[y+1][i])) {
+	nMines++;
+      }
+    }
+  }
+  else if (x==(b->width)-1) {//right side non corner
+    for (int i=0; i<2;i++) {
+      if (IS_MINE(b->board[y-1][x-i])) {
+	nMines++;
+      }
+    }
+    if (IS_MINE(b->board[y][x-1])) {
+      nMines++;
+    }
+    for (int i=0; i<2;i++) {
+      if (IS_MINE(b->board[y+1][x-i])) {
+	nMines++;
+      }
+    }
+  }
+  else if (y==0) {//top row non corner
+    for (int i=0; i<2;i++) {
+      if (IS_MINE(b->board[y+i][x-1])) {
+	nMines++;
+      }
+    }
+    if (IS_MINE(b->board[y+1][x])) {
+      nMines++;
+    }
+    for (int i=0; i<2;i++) {
+      if (IS_MINE(b->board[y+i][x+1])) {
+	nMines++;
+      }
+    }
+  }
+  else if (y==(b->height)-1) {//bottom row non corner
+    for (int i=0; i<2;i++) {
+      if (IS_MINE(b->board[y-i][x-1])) {
+	nMines++;
+      }
+    }
+    if (IS_MINE(b->board[y-1][x])) {
+      nMines++;
+    }
+    for (int i=0; i<2;i++) {
+      if (IS_MINE(b->board[y-i][x+1])) {
+	nMines++;
+      }
+    }
+  }
+  else {// somewhere in the middle
+    for (int i=0; i<3; i++) {
+      if (IS_MINE(b->board[y-1][x+i-1])) {
+	nMines++;
+      }
+    }
+    for (int i=0; i<3; i+=2) {
+      if(IS_MINE(b->board[y][x+i-1])) {
+	nMines++;
+      }
+    }
+    for (int i=0; i<3; i++) {
+      if (IS_MINE(b->board[y+1][x+i-1])) {
+	nMines++;
+      }
+    }
+  }
+  
+  return nMines;
 }
+
 int click (board_t * b, int x, int y) {
   if (x < 0 || x >= b->width ||
       y < 0 || y >= b->height) {
@@ -119,11 +262,30 @@ int click (board_t * b, int x, int y) {
 
 int checkWin(board_t * b) {
   //WRITE ME!
-  return 0;
+  for (int r=0;r<b->height;r++) {
+    for (int c=0; c<b->width; c++) {
+      if (b->board[r][c] == UNKNOWN) {
+	return 0;
+      }
+    }
+  }
+  return 1;
 }
 
 void freeBoard(board_t * b) {
   //WRITE ME!
+  /*
+  for (int r=0;r<b->height;r++) {
+    for (int c=0; c<b->width; c++) {
+      free(b->board[r][c]);
+    }
+  }
+  */
+  for (int i=0; i<b->height; i++) {
+    free(b->board[i]);
+  }
+  free(b->board);
+  free(b);
 }
 
 int readInt(char ** linep, size_t * lineszp) {
