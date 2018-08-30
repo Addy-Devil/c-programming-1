@@ -1,9 +1,5 @@
-Grading at Thu Aug 30 23:44:08 UTC 2018
+Grading at Thu Aug 30 23:46:00 UTC 2018
 Compiling deck.c -> deck.o
-deck.c: In function ‘add_card_to’:
-deck.c:41:32: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
-   deck->cards[deck->n_cards-1] = c;
-                                ^
 deck.c: In function ‘add_empty_card’:
 deck.c:48:21: error: incompatible type for argument 2 of ‘add_card_to’
    add_card_to(deck, c);
