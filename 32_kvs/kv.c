@@ -6,18 +6,18 @@
 kvpair_t * getKVPair(char * line) {
   char * token;
   kvpair_t * kvpair = malloc(sizeof(*kvpair));
-  token = strtok(line, "=");
+  token = strsep(&line, "=");
   kvpair->key =  token;
-  token = strtok(NULL, "=");
+  token = strsep(&line, "=");
   kvpair->value = token;
   
   return kvpair;
 }
 
-void addPairToArray(kvarray_t * kvarray, kvpair_t * kvpair) {
-  kvarray->numPairs++;
-  kvarray->kvpairs = realloc(kvarray->kvpairs, kvarray->numPairs * sizeof(*kvpair));
-  kvarray->kvpairs[kvarray->numPairs-1] = kvpair;
+void addPairToArray(kvarray_t * pairs, kvpair_t * kvpair) {
+  pairs->numPairs++;
+  pairs->kvpairs = realloc(pairs->kvpairs, pairs->numPairs * sizeof(*kvpair));
+  pairs->kvpairs[pairs->numPairs-1] = kvpair;
 }
 
 kvarray_t * readKVs(const char * fname) {
@@ -30,6 +30,8 @@ kvarray_t * readKVs(const char * fname) {
   }
 
   kvarray_t * kvarray = malloc(sizeof(*kvarray));
+  kvarray->kvpairs = NULL;
+  kvarray->numPairs = 0;
   char * line = NULL;
   size_t sz = 0;
   while (getline(&line, &sz, f) > 0) {
@@ -53,6 +55,8 @@ void freeKVs(kvarray_t * pairs) {
   for (int i=0; i<pairs->numPairs; i++) {
     free(pairs->kvpairs[i]);
   }
+  free(pairs->kvpairs);
+  free(pairs);
 }
 
 void printKVs(kvarray_t * pairs) {
