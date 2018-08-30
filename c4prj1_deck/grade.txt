@@ -1,12 +1,5 @@
-Grading at Thu Aug 30 23:48:46 UTC 2018
+Grading at Thu Aug 30 23:49:23 UTC 2018
 Compiling deck.c -> deck.o
-deck.c: In function ‘add_empty_card’:
-deck.c:46:4: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
-   c->value = 0;
-    ^
-deck.c:47:4: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
-   c->suit = 0;
-    ^
 deck.c: In function ‘build_remaining_deck’:
 deck.c:70:30: error: ‘i’ undeclared (first use in this function)
      for (size_t c=0; c<hands[i]->ncards; c++) {
