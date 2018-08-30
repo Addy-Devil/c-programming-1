@@ -7,9 +7,10 @@ kvpair_t * getKVPair(char * line) {
   char * token;
   kvpair_t * kvpair = malloc(sizeof(*kvpair));
   token = strsep(&line, "=");
-  kvpair->key =  strdup(token);
+  char * tokcpy = strdup(token);
+  kvpair->key =  tokcpy;
   token = strsep(&line, "=");
-  kvpair->value = strdup(token);
+  kvpair->value = token;
   
   return kvpair;
 }
@@ -54,8 +55,6 @@ kvarray_t * readKVs(const char * fname) {
 void freeKVs(kvarray_t * pairs) {
   //WRITE ME
   for (int i=0; i<pairs->numPairs; i++) {
-    free(pairs->kvpairs[i]->key);
-    free(pairs->kvpairs[i]->value);
     free(pairs->kvpairs[i]);
   }
   free(pairs->kvpairs);
