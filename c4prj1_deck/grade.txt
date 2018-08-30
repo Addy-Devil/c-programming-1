@@ -1,0 +1,27 @@
+Grading at Thu Aug 30 23:44:08 UTC 2018
+Compiling deck.c -> deck.o
+deck.c: In function ‘add_card_to’:
+deck.c:41:32: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
+   deck->cards[deck->n_cards-1] = c;
+                                ^
+deck.c: In function ‘add_empty_card’:
+deck.c:48:21: error: incompatible type for argument 2 of ‘add_card_to’
+   add_card_to(deck, c);
+                     ^
+deck.c:38:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
+ void add_card_to(deck_t * deck, card_t c) {
+      ^
+deck.c: In function ‘build_remaining_deck’:
+deck.c:70:30: error: ‘i’ undeclared (first use in this function)
+     for (size_t c=0; c<hands[i]->ncards; c++) {
+                              ^
+deck.c:70:30: note: each undeclared identifier is reported only once for each function it appears in
+deck.c:71:22: error: incompatible type for argument 2 of ‘add_card_to’
+       add_card_to(d, hands[h]->cards[c]);
+                      ^
+deck.c:38:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
+ void add_card_to(deck_t * deck, card_t c) {
+      ^
+Compilation of deck.c failed
+
+Overall Grade: F
