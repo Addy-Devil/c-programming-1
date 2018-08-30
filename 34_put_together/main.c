@@ -5,6 +5,13 @@
 #include "counts.h"
 #include "outname.h"
 
+char * removeNewline(char * c) {
+  char * pos;
+  pos=strchr(c, '\n');
+  *pos = '\0';
+  return c;
+}
+
 counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   //WRITE ME
   counts_t * c = createCounts();
@@ -15,18 +22,20 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
     return NULL;
   }
 
-  char * key = NULL;
+  char * line = NULL;
   size_t sz = 0;
-  char * value;//malloc(sizeof(*value));
-  while(getline(&key, &sz, f) > 0) {
+  char * key;
+  char * value;
+  while(getline(&line, &sz, f) > 0) {
+    key = removeNewline(line);
     value = lookupValue(kvPairs, key);
     //printf("in countFile: key = %s\n", key);
     //printf("in countFile: value = %s\n", value);
     addCount(c, value);
-    free(key);
-    key = NULL;
+    free(line);
+    line = NULL;
   }
-  free(key);
+  free(line);
 
   if (fclose(f)!=0) {
     perror("fclose");
@@ -67,6 +76,7 @@ int main(int argc, char ** argv) {
     }
     //print the counts from c into the FILE f
     printCounts(c, f);
+    
     //close f
     if (fclose(f) != 0) {
       perror("fclose");
