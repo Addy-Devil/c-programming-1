@@ -21,7 +21,7 @@ void addCount(counts_t * c, const char * name) {
     for (i=0; i<c->len_array; i++) {
       if (strcmp(name, c->one_count_array[i]->some_string)==0) {
 	in_array = 1;
-	break;
+	break; //want to save value of i to increment appropriate 'n_encounters'
       }
     }
     if (in_array==1) {
