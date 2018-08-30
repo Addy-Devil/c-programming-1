@@ -4,12 +4,19 @@
 #include "kv.h"
 
 kvpair_t * getKVPair(char * line) {
-  char * token;
+  char *key, *value;
+  //const char delim = '=';
   kvpair_t * kvpair = malloc(sizeof(*kvpair));
-  token = strsep(&line, "=");
-  kvpair->key =  strdup(token);
-  token = strsep(&line, "=");
-  kvpair->value = strdup(token);
+
+  /*
+  //key = strsep(&line, &delim);
+  value = strchr(line, delim);
+  key = strsep(&line, &delim);
+  */
+  key = strsep(&line, "=");
+  value = strsep(&line, "\n");
+  kvpair->key = strdup(key);
+  kvpair->value = strdup(value);
   
   return kvpair;
 }
