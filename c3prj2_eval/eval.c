@@ -248,7 +248,7 @@ unsigned * get_match_counts(deck_t * hand) {
   while (i<hand->n_cards) {
     c = *hand->cards[i];
     int j=i;
-    while(c.value == hand->cards[j].value) {
+    while(c.value == hand->cards[j]->value) {
       match_counts[j]++;
       j++;
     }
