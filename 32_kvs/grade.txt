@@ -1,13 +1,15 @@
-Grading at Wed Aug 29 21:41:43 UTC 2018
+Grading at Thu Aug 30 03:43:14 UTC 2018
 Attempting to compile:
 #################################################
 testcase1:
-valgrind reported memory errors
+Your output is incorrect
 #################################################
 testcase2:
-valgrind reported memory errors
+Your output is incorrect
 #################################################
 testcase3:
-valgrind reported memory errors
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 
 Overall Grade: F
