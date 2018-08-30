@@ -1,11 +1,6 @@
-Grading at Thu Aug 30 23:47:47 UTC 2018
+Grading at Thu Aug 30 23:48:46 UTC 2018
 Compiling deck.c -> deck.o
-In file included from /usr/include/stdlib.h:32:0,
-                 from deck.c:2:
 deck.c: In function ‘add_empty_card’:
-deck.c:45:14: error: invalid initializer
-   card_t c = NULL;
-              ^
 deck.c:46:4: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
    c->value = 0;
     ^
