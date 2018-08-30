@@ -4,11 +4,11 @@
 #include "kv.h"
 
 kvpair_t * getKVPair(char * line) {
-  char * token;
+  char * token, *saveptr;
   kvpair_t * kvpair = malloc(sizeof(*kvpair));
-  token = strsep(&line, "=");
+  token = strtok_r(line, "=", &saveptr);
   kvpair->key =  token;
-  token = strsep(&line, "=");
+  token = strtok_r(NULL, "=", &saveptr);
   kvpair->value = token;
   
   return kvpair;
@@ -37,6 +37,7 @@ kvarray_t * readKVs(const char * fname) {
   while (getline(&line, &sz, f) > 0) {
     kvpair_t * kvpair = getKVPair(line);
     addPairToArray(kvarray, kvpair);
+    free(line);
     line = NULL;
   }
   free(line);
