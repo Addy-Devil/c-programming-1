@@ -1,13 +1,10 @@
-Grading at Thu Aug 30 23:51:29 UTC 2018
+Grading at Thu Aug 30 23:53:11 UTC 2018
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 eval.c: In function ‘get_match_counts’:
-eval.c:249:7: error: incompatible types when assigning to type ‘card_t {aka struct card_tag}’ from type ‘card_t * {aka struct card_tag *}’
-     c = hand->cards[i];
-       ^
-eval.c:251:12: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
-     while(c->value == hand->cards[j]->value) {
-            ^
+eval.c:251:36: error: request for member ‘value’ in something not a structure or union
+     while(c.value == hand->cards[j].value) {
+                                    ^
 Compilation of eval.c failed
 
 Overall Grade: F
