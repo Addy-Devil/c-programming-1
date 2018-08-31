@@ -36,6 +36,7 @@ void assert_full_deck(deck_t * d) {
 }
 
 void add_card_to(deck_t * deck, card_t c) {
+  assert_valid_card(c);
   deck->n_cards++;
   deck->cards = realloc(deck->cards, deck->n_cards * sizeof(*deck->cards));
   deck->cards[deck->n_cards-1] = &c;
@@ -81,11 +82,6 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
 }
 
 void free_deck(deck_t * deck) {
-  /*
-  for (size_t i=0; i<deck->n_cards; i++) {
-    free(deck->cards[i]);
-  }
-  */
   free(deck->cards);
   free(deck);
 }
