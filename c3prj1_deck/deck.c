@@ -54,7 +54,7 @@ deck_t * make_deck_exclude(deck_t * excluded_cards) {
   card_t c;
   for(unsigned i=0; i<52; i++) {
     c = card_from_num(i);
-    if (!deck_contains(excluded_cards, c)) {
+    if (deck_contains(excluded_cards, c)==0) {
       add_card_to(d, c);
     }
     else {
@@ -64,33 +64,24 @@ deck_t * make_deck_exclude(deck_t * excluded_cards) {
   return d;
 }
 
-void free_deck(deck_t * deck) {
-  for (size_t i=0; i<deck->n_cards; i++) {
-    free(deck->cards[i]);
-  }
-  free(deck);
-}
-
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
-  deck_t * d1 = malloc(sizeof(*d1));
-  deck_t * d2 = malloc(sizeof(*d2));
+  deck_t * d = malloc(sizeof(*d));
   for (size_t h=0; h<n_hands; h++) {
     for (size_t c=0; c<hands[h]->n_cards; c++) {
-      add_card_to(d1, *hands[h]->cards[c]);
+      add_card_to(d, *hands[h]->cards[c]);
     }
   }
   
-  d2 = make_deck_exclude(d1);
-  free_deck(d1);
+  d = make_deck_exclude(d);
   
-  return d2;
+  return d;
 }
 
-/*
+
 void free_deck(deck_t * deck) {
   for (size_t i=0; i<deck->n_cards; i++) {
     free(deck->cards[i]);
   }
   free(deck);
 }
-*/
+
