@@ -1,10 +1,1471 @@
-Grading at Fri Aug 31 00:33:00 UTC 2018
+Grading at Fri Aug 31 00:33:49 UTC 2018
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
-eval.c: In function ‘get_match_counts’:
-eval.c:249:16: error: invalid initializer
-     card_t c = hand->cards[curr_match];
-                ^
-Compilation of eval.c failed
+Compiling cards.c -> cards.o
+Linking eval.o, deck.o, cards.o, and our tester
+Testing free_deck(deck_t *)
+- Test passed
+Testing add_card_to(deck_t *, card_t)
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 1s 
+Expected deck: Kd 
+Your deck: ?0
+ 
+Expected deck: Ks Kh Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ ?41
+ ?42
+ ?43
+ ?44
+ ?45
+ ?46
+ ?47
+ ?48
+ ?49
+ ?50
+ 
+Expected deck: As Ah 
+Your deck: ?0
+ ?1
+ 
+Expected deck: Ks Kh Kd Kc Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ ?41
+ ?42
+ ?43
+ ?44
+ ?45
+ ?46
+ ?47
+ ?48
+ ?49
+ 
+Expected deck: Ad Ac 2s 
+Your deck: ?0
+ ?1
+ ?2
+ 
+Expected deck: Ks Kh Kd Kc As Ah 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ ?41
+ ?42
+ ?43
+ ?44
+ ?45
+ ?46
+ ?47
+ ?48
+ 
+Expected deck: 2s 2h 2d 2c 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ ?41
+ ?42
+ ?43
+ ?44
+ ?45
+ ?46
+ ?47
+ 
+Expected deck: 2d 2c 3s 3h 3d 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ ?41
+ ?42
+ ?43
+ ?44
+ ?45
+ ?46
+ 
+Expected deck: 3s 3h 3d 3c 4s 4h 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ ?41
+ ?42
+ ?43
+ ?44
+ ?45
+ 
+Expected deck: 3d 3c 4s 4h 4d 4c 5s 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ ?41
+ ?42
+ ?43
+ ?44
+ 
+Expected deck: 4s 4h 4d 4c 5s 5h 5d 5c 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ ?41
+ ?42
+ ?43
+ 
+Expected deck: 4d 4c 5s 5h 5d 5c 6s 6h 6d 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ ?41
+ ?42
+ 
+Expected deck: 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ ?41
+ 
+Expected deck: 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ ?40
+ 
+Expected deck: 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ ?39
+ 
+Expected deck: 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ ?38
+ 
+Expected deck: 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ ?37
+ 
+Expected deck: 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
+Your deck: ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ ?5
+ ?6
+ ?7
+ ?8
+ ?9
+ ?10
+ ?11
+ ?12
+ ?13
+ ?14
+ ?15
+ ?16
+ ?17
+ ?18
+ ?19
+ ?20
+ ?21
+ ?22
+ ?23
+ ?24
+ ?25
+ ?26
+ ?27
+ ?28
+ ?29
+ ?30
+ ?31
+ ?32
+ ?33
+ ?34
+ ?35
+ ?36
+ 
+Valgrind reported errors:
+==1830== Memcheck, a memory error detector
+==1830== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1830== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1830== Command: ./tester act
+==1830== Parent PID: 1829
+==1830== 
+==1830== Invalid free() / delete / delete[] / realloc()
+==1830==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1830==    by 0x402202: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==1830==    by 0x404085: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==1830==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1830==  Address 0xfff000760 is on thread 1's stack
+==1830==  in frame #1, created by free_deck (???:)
+==1830== 
+==1830== Invalid free() / delete / delete[] / realloc()
+==1830==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1830==    by 0x402202: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==1830==    by 0x404074: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==1830==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1830==  Address 0xfff000760 is on thread 1's stack
+==1830==  in frame #1, created by free_deck (???:)
+==1830== 
+==1830== 
+==1830== HEAP SUMMARY:
+==1830==     in use at exit: 6,656 bytes in 31 blocks
+==1830==   total heap usage: 1,865 allocs, 2,666 frees, 159,296 bytes allocated
+==1830== 
+==1830== LEAK SUMMARY:
+==1830==    definitely lost: 6,656 bytes in 31 blocks
+==1830==    indirectly lost: 0 bytes in 0 blocks
+==1830==      possibly lost: 0 bytes in 0 blocks
+==1830==    still reachable: 0 bytes in 0 blocks
+==1830==         suppressed: 0 bytes in 0 blocks
+==1830== Rerun with --leak-check=full to see details of leaked memory
+==1830== 
+==1830== For counts of detected and suppressed errors, rerun with: -v
+==1830== ERROR SUMMARY: 832 errors from 2 contexts (suppressed: 0 from 0)
+Testing add_empty_card(deck_t *)
+Expected deck: Ad Ac 2s ?0
+ 
+Your deck: Ad Ac 2s As 
+Expected deck: Ks Kh Kd Kc As Ah 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc ?0
+ 
+Your deck: Ks Kh Kd Kc As Ah 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc As 
+Expected deck: 2s 2h 2d 2c ?0
+ ?1
+ 
+Your deck: 2s 2h 2d 2c As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc ?0
+ ?1
+ 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc As As 
+Expected deck: 2d 2c 3s 3h 3d ?0
+ ?1
+ ?2
+ 
+Your deck: 2d 2c 3s 3h 3d As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc ?0
+ ?1
+ ?2
+ 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc As As As 
+Expected deck: 3s 3h 3d 3c 4s 4h ?0
+ ?1
+ ?2
+ ?3
+ 
+Your deck: 3s 3h 3d 3c 4s 4h As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc ?0
+ ?1
+ ?2
+ ?3
+ 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc As As As As 
+Expected deck: 3d 3c 4s 4h 4d 4c 5s ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ 
+Your deck: 3d 3c 4s 4h 4d 4c 5s As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc ?0
+ ?1
+ ?2
+ ?3
+ ?4
+ 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc As As As As As 
+Valgrind reported errors:
+==1834== Memcheck, a memory error detector
+==1834== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1834== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1834== Command: ./tester aec
+==1834== Parent PID: 1833
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x4028DB: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BCA: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x4029FA: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BCA: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x402340: suit_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A0B: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BCA: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x402345: suit_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A0B: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BCA: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x4022E5: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A16: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BCA: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x4022F5: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A16: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BCA: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x402304: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A16: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BCA: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x402313: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A16: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BCA: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x402322: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A16: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BCA: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x4028DB: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BE3: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x4029FA: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BE3: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x402340: suit_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A0B: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BE3: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x402345: suit_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A0B: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BE3: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x4022E5: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A16: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BE3: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x4022F5: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A16: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BE3: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x402304: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A16: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BE3: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x402313: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A16: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BE3: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Conditional jump or move depends on uninitialised value(s)
+==1834==    at 0x402322: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x402A16: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403BE3: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834== 
+==1834== Invalid free() / delete / delete[] / realloc()
+==1834==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1834==    by 0x402202: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403C84: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834==  Address 0xfff000730 is on thread 1's stack
+==1834==  in frame #0, created by free (???:)
+==1834== 
+==1834== Invalid free() / delete / delete[] / realloc()
+==1834==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1834==    by 0x402202: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x403C95: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==1834==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1834==  Address 0xfff000730 is on thread 1's stack
+==1834==  in frame #0, created by free (???:)
+==1834== 
+==1834== 
+==1834== HEAP SUMMARY:
+==1834==     in use at exit: 6,896 bytes in 31 blocks
+==1834==   total heap usage: 2,091 allocs, 2,090 frees, 54,544 bytes allocated
+==1834== 
+==1834== LEAK SUMMARY:
+==1834==    definitely lost: 6,896 bytes in 31 blocks
+==1834==    indirectly lost: 0 bytes in 0 blocks
+==1834==      possibly lost: 0 bytes in 0 blocks
+==1834==    still reachable: 0 bytes in 0 blocks
+==1834==         suppressed: 0 bytes in 0 blocks
+==1834== Rerun with --leak-check=full to see details of leaked memory
+==1834== 
+==1834== For counts of detected and suppressed errors, rerun with: -v
+==1834== Use --track-origins=yes to see where uninitialised values come from
+==1834== ERROR SUMMARY: 280 errors from 20 contexts (suppressed: 0 from 0)
+Testing make_deck_exclude(deck_t *)
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
+Your deck: As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As As 
+Valgrind reported errors:
+==1838== Memcheck, a memory error detector
+==1838== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1838== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1838== Command: ./tester mde
+==1838== Parent PID: 1837
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1838==    by 0x402027: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x4020FC: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x40364C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1838==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1838==    by 0x402027: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x4020FC: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x40364C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Use of uninitialised value of size 8
+==1838==    at 0x402050: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x4020FC: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x40364C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1838==    by 0x402027: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x4020FC: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x40364C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x40287C: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x4028DB: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x402ABF: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x402BC6: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x402C0E: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x402340: suit_letter (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x402C1D: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x402345: suit_letter (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x402C1D: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x4022E5: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x402C28: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x4022F5: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x402C28: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x402304: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x402C28: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x402313: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x402C28: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x402322: value_letter (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x402C28: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x402BFA: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403754: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Conditional jump or move depends on uninitialised value(s)
+==1838==    at 0x402214: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403808: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838== 
+==1838== Invalid free() / delete / delete[] / realloc()
+==1838==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1838==    by 0x402202: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x403808: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1838==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1838==  Address 0xfff0007c0 is on thread 1's stack
+==1838==  in frame #0, created by free (???:)
+==1838== 
+==1838== 
+==1838== HEAP SUMMARY:
+==1838==     in use at exit: 5,696 bytes in 16 blocks
+==1838==   total heap usage: 1,729 allocs, 2,425 frees, 153,600 bytes allocated
+==1838== 
+==1838== LEAK SUMMARY:
+==1838==    definitely lost: 5,696 bytes in 16 blocks
+==1838==    indirectly lost: 0 bytes in 0 blocks
+==1838==      possibly lost: 0 bytes in 0 blocks
+==1838==    still reachable: 0 bytes in 0 blocks
+==1838==         suppressed: 0 bytes in 0 blocks
+==1838== Rerun with --leak-check=full to see details of leaked memory
+==1838== 
+==1838== For counts of detected and suppressed errors, rerun with: -v
+==1838== Use --track-origins=yes to see where uninitialised values come from
+==1838== ERROR SUMMARY: 10048 errors from 19 contexts (suppressed: 0 from 0)
+Testing build_remaining_deck(deck_t **, size_t)
+Testing with 1 hand
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Testing with 2 hands
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qs Qh Qd Qc 
+Expected deck: 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc As Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2h 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3h 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3d 3c 4h 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3d 3c 4d 4c 5h 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Testing with 3 hands
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3d 3c 4d 4c 5d 5c 6h 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3d 3c 4d 4c 5d 5c 6d 6c 7h 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3d 3c 4d 4c 5d 5c 6d 6c 7d 7c 8h 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3d 3c 4d 4c 5d 5c 6d 6c 7d 7c 8d 8c 9h 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3d 3c 4d 4c 5d 5c 6d 6c 7d 7c 8d 8c 9d 9c 0h 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3d 3c 4d 4c 5d 5c 6d 6c 7d 7c 8d 8c 9d 9c 0d 0c Jh Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3d 3c 4d 4c 5d 5c 6d 6c 7d 7c 8d 8c 9d 9c 0d 0c Jd Jc Qh Qd Qc 
+Expected deck: 
+Your deck: Kh Kd Kc Ah Ad Ac 2d 2c 3d 3c 4d 4c 5d 5c 6d 6c 7d 7c 8d 8c 9d 9c 0d 0c Jd Jc Qd Qc 
+Testing with 4 hands
+Expected deck: 
+Your deck: Kd Kc Ah Ad Ac 2d 2c 3d 3c 4d 4c 5d 5c 6d 6c 7d 7c 8d 8c 9d 9c 0d 0c Jd Jc Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 2c 3d 3c 4d 4c 5d 5c 6d 6c 7d 7c 8d 8c 9d 9c 0d 0c Jd Jc Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 3c 4d 4c 5d 5c 6d 6c 7d 7c 8d 8c 9d 9c 0d 0c Jd Jc Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 4d 4c 5d 5c 6d 6c 7d 7c 8d 8c 9d 9c 0d 0c Jd Jc Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 4d 5d 5c 6d 6c 7d 7c 8d 8c 9d 9c 0d 0c Jd Jc Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 4d 5d 6d 6c 7d 7c 8d 8c 9d 9c 0d 0c Jd Jc Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 4d 5d 6d 7d 7c 8d 8c 9d 9c 0d 0c Jd Jc Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 4d 5d 6d 7d 8d 8c 9d 9c 0d 0c Jd Jc Qd Qc 
+Testing with 5 hands
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 4d 5d 6d 7d 8d 9d 9c 0d 0c Jd Jc Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 4d 5d 6d 7d 8d 9d 0d 0c Jd Jc Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 4d 5d 6d 7d 8d 9d 0d Jd Jc Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 4d 5d 6d 7d 8d 9d 0d Jd Qd Qc 
+Expected deck: 
+Your deck: Kd Kc Ad Ac 2d 3d 4d 5d 6d 7d 8d 9d 0d Jd Qd 
+Expected deck: 
+Your deck: Kd Ad Ac 2d 3d 4d 5d 6d 7d 8d 9d 0d Jd Qd 
+Expected deck: 
+Your deck: Kd Ad 2d 3d 4d 5d 6d 7d 8d 9d 0d Jd Qd 
+Expected deck: 
+Your deck: Kd Ad 3d 4d 5d 6d 7d 8d 9d 0d Jd Qd 
+Testing with 6 hands
+Expected deck: 
+Your deck: Kd Ad 4d 5d 6d 7d 8d 9d 0d Jd Qd 
+Expected deck: 
+Your deck: Kd Ad 5d 6d 7d 8d 9d 0d Jd Qd 
+Valgrind reported errors:
+==1842== Memcheck, a memory error detector
+==1842== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1842== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1842== Command: ./tester brd
+==1842== Parent PID: 1841
+==1842== 
+==1842== Conditional jump or move depends on uninitialised value(s)
+==1842==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1842==    by 0x402027: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x402185: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x4032AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1842== 
+==1842== Conditional jump or move depends on uninitialised value(s)
+==1842==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1842==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1842==    by 0x402027: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x402185: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x4032AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1842== 
+==1842== Use of uninitialised value of size 8
+==1842==    at 0x402050: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x402185: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x4032AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1842== 
+==1842== Conditional jump or move depends on uninitialised value(s)
+==1842==    at 0x401E9B: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x4020E5: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x4021C5: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x4032AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1842== 
+==1842== Conditional jump or move depends on uninitialised value(s)
+==1842==    at 0x40287C: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x4033E0: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1842== 
+==1842== Conditional jump or move depends on uninitialised value(s)
+==1842==    at 0x4028FD: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x4033E0: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1842== 
+==1842== Conditional jump or move depends on uninitialised value(s)
+==1842==    at 0x4033FD: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1842== 
+==1842== Conditional jump or move depends on uninitialised value(s)
+==1842==    at 0x4C2EDA1: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1842==    by 0x403420: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1842== 
+==1842== Conditional jump or move depends on uninitialised value(s)
+==1842==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1842==    by 0x402027: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x402185: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x4032AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==1842==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1842== 
+==1842== 
+==1842== HEAP SUMMARY:
+==1842==     in use at exit: 8,568 bytes in 126 blocks
+==1842==   total heap usage: 4,435 allocs, 4,309 frees, 251,208 bytes allocated
+==1842== 
+==1842== LEAK SUMMARY:
+==1842==    definitely lost: 1,344 bytes in 84 blocks
+==1842==    indirectly lost: 7,224 bytes in 42 blocks
+==1842==      possibly lost: 0 bytes in 0 blocks
+==1842==    still reachable: 0 bytes in 0 blocks
+==1842==         suppressed: 0 bytes in 0 blocks
+==1842== Rerun with --leak-check=full to see details of leaked memory
+==1842== 
+==1842== For counts of detected and suppressed errors, rerun with: -v
+==1842== Use --track-origins=yes to see where uninitialised values come from
+==1842== ERROR SUMMARY: 4200 errors from 9 contexts (suppressed: 0 from 0)
+Testing get_match_count(deck_t *)
+timeout: the monitored command dumped core
+Valgrind reported errors:
+==1846== Memcheck, a memory error detector
+==1846== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1846== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1846== Command: ./tester gmc
+==1846== Parent PID: 1845
+==1846== 
+==1846== Invalid read of size 8
+==1846==    at 0x401540: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==1846==    by 0x402EB9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==1846==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1846==  Address 0x52042d0 is 0 bytes after a block of size 16 alloc'd
+==1846==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1846==    by 0x402D66: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==1846==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1846== 
+==1846== Invalid read of size 4
+==1846==    at 0x401543: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==1846==    by 0x402EB9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==1846==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1846==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1846== 
+==1846== 
+==1846== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==1846==  Access not within mapped region at address 0x0
+==1846==    at 0x401543: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==1846==    by 0x402EB9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==1846==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==1846==  If you believe this happened as a result of a stack
+==1846==  overflow in your program's main thread (unlikely but
+==1846==  possible), you can try to increase the size of the
+==1846==  main thread stack using the --main-stacksize= flag.
+==1846==  The main thread stack size used in this run was 8388608.
+==1846== 
+==1846== HEAP SUMMARY:
+==1846==     in use at exit: 112 bytes in 10 blocks
+==1846==   total heap usage: 14 allocs, 4 frees, 136 bytes allocated
+==1846== 
+==1846== LEAK SUMMARY:
+==1846==    definitely lost: 8 bytes in 1 blocks
+==1846==    indirectly lost: 0 bytes in 0 blocks
+==1846==      possibly lost: 0 bytes in 0 blocks
+==1846==    still reachable: 104 bytes in 9 blocks
+==1846==         suppressed: 0 bytes in 0 blocks
+==1846== Rerun with --leak-check=full to see details of leaked memory
+==1846== 
+==1846== For counts of detected and suppressed errors, rerun with: -v
+==1846== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
