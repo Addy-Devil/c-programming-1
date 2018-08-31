@@ -65,16 +65,17 @@ deck_t * make_deck_exclude(deck_t * excluded_cards) {
 }
 
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
-  deck_t * d = malloc(sizeof(*d));
+  deck_t * d1 = malloc(sizeof(*d1));
+  deck_t * d2 = malloc(sizeof(*d2));
   for (size_t h=0; h<n_hands; h++) {
     for (size_t c=0; c<hands[h]->n_cards; c++) {
-      add_card_to(d, *hands[h]->cards[c]);
+      add_card_to(d1, *hands[h]->cards[c]);
     }
   }
   
-  d = make_deck_exclude(d);
+  d2 = make_deck_exclude(d1);
   
-  return d;
+  return d2;
 }
 
 
