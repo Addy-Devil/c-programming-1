@@ -1,4 +1,4 @@
-Grading at Sat Sep  1 01:45:55 UTC 2018
+Grading at Sat Sep  1 01:47:16 UTC 2018
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
@@ -20,12 +20,15 @@ Testing with 5 hands
 Testing with 6 hands
 - Test passed
 Testing get_match_count(deck_t *)
-Valgrind reported errors:
-==3720== Memcheck, a memory error detector
-==3720== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==3720== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==3720== Command: ./tester gmc
-==3720== Parent PID: 3719
-==3720== 
+In this hand: Ac Ah 
+  I expected the 0'th match count to be 2 but you got 1
+  I expected the 1'th match count to be 2 but you got 1
+In this hand: Ac Ad Ah Kc Kd Qh Qs 
+  I expected the 5'th match count to be 2 but you got 1
+  I expected the 6'th match count to be 2 but you got 1
+In this hand: Ac Ad Ah Kc Kd Ks Qd Qh Qs 0d 0s 9c 9h 
+  I expected the 11'th match count to be 2 but you got 1
+  I expected the 12'th match count to be 2 but you got 1
+- Test failed
 
 Overall Grade: B
