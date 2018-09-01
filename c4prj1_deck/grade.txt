@@ -1,4 +1,4 @@
-Grading at Sat Sep  1 01:37:46 UTC 2018
+Grading at Sat Sep  1 01:44:49 UTC 2018
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
@@ -20,54 +20,12 @@ Testing with 5 hands
 Testing with 6 hands
 - Test passed
 Testing get_match_count(deck_t *)
-timeout: the monitored command dumped core
 Valgrind reported errors:
-==3454== Memcheck, a memory error detector
-==3454== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==3454== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==3454== Command: ./tester gmc
-==3454== Parent PID: 3453
-==3454== 
-==3454== Invalid read of size 8
-==3454==    at 0x401542: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
-==3454==    by 0x402F29: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==3454==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==3454==  Address 0x52042d0 is 0 bytes after a block of size 16 alloc'd
-==3454==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==3454==    by 0x402DD6: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==3454==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==3454== 
-==3454== Invalid read of size 4
-==3454==    at 0x401545: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
-==3454==    by 0x402F29: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==3454==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==3454==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==3454== 
-==3454== 
-==3454== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==3454==  Access not within mapped region at address 0x0
-==3454==    at 0x401545: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
-==3454==    by 0x402F29: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==3454==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==3454==  If you believe this happened as a result of a stack
-==3454==  overflow in your program's main thread (unlikely but
-==3454==  possible), you can try to increase the size of the
-==3454==  main thread stack using the --main-stacksize= flag.
-==3454==  The main thread stack size used in this run was 8388608.
-==3454== 
-==3454== HEAP SUMMARY:
-==3454==     in use at exit: 112 bytes in 10 blocks
-==3454==   total heap usage: 14 allocs, 4 frees, 136 bytes allocated
-==3454== 
-==3454== LEAK SUMMARY:
-==3454==    definitely lost: 8 bytes in 1 blocks
-==3454==    indirectly lost: 0 bytes in 0 blocks
-==3454==      possibly lost: 0 bytes in 0 blocks
-==3454==    still reachable: 104 bytes in 9 blocks
-==3454==         suppressed: 0 bytes in 0 blocks
-==3454== Rerun with --leak-check=full to see details of leaked memory
-==3454== 
-==3454== For counts of detected and suppressed errors, rerun with: -v
-==3454== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==3587== Memcheck, a memory error detector
+==3587== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3587== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3587== Command: ./tester gmc
+==3587== Parent PID: 3586
+==3587== 
 
 Overall Grade: B
