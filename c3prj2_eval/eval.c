@@ -244,15 +244,15 @@ unsigned * get_match_counts(deck_t * hand) {
     match_counts[i] = 1;
   }
   
-  int curr_match = 0;
+  unsigned curr_match = 0;
   while(curr_match<hand->n_cards) {
-    int num_curr_matches = 1;
-    int i=curr_match+1;
+    unsigned num_curr_matches = 1;
+    unsigned i=curr_match+1;
     while (hand->cards[curr_match]->value == hand->cards[i]->value) {
       num_curr_matches++;
       i++;
     }
-    for (int j=curr_match; j<curr_match+num_curr_matches; j++) {
+    for (unsigned j=curr_match; j<curr_match+num_curr_matches; j++) {
       match_counts[j] = num_curr_matches;
     }
     curr_match+=num_curr_matches;
