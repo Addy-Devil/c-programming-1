@@ -1,4 +1,4 @@
-Grading at Sat Sep  1 01:53:47 UTC 2018
+Grading at Sat Sep  1 01:57:02 UTC 2018
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
@@ -20,12 +20,6 @@ Testing with 5 hands
 Testing with 6 hands
 - Test passed
 Testing get_match_count(deck_t *)
-Valgrind reported errors:
-==4118== Memcheck, a memory error detector
-==4118== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==4118== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==4118== Command: ./tester gmc
-==4118== Parent PID: 4117
-==4118== 
+- Test passed
 
-Overall Grade: B
+Overall Grade: A
