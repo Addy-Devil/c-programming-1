@@ -253,7 +253,7 @@ unsigned * get_match_counts(deck_t * hand) {
       i++;
     }
     for (int j=curr_match; j<curr_match+num_curr_matches; j++) {
-      match_counts[i] = num_curr_matches;
+      match_counts[j] = num_curr_matches;
     }
     curr_match+=num_curr_matches;
   }
