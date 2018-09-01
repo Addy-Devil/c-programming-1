@@ -257,8 +257,8 @@ unsigned * get_match_counts(deck_t * hand) {
       for (unsigned j=curr_match; j<curr_match+num_curr_matches; j++) {
 	match_counts[j] = num_curr_matches;
       }
-      curr_match+=num_curr_matches;
     }
+    curr_match+=num_curr_matches;
   }
   
   return match_counts;
