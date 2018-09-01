@@ -248,7 +248,7 @@ unsigned * get_match_counts(deck_t * hand) {
   while(curr_match<hand->n_cards) {
     unsigned num_curr_matches = 1;
     unsigned i=curr_match+1;
-    if (i<hand->n_cards) {
+    if (i<hand->n_cards-1) {
       while (hand->cards[curr_match]->value == hand->cards[i]->value) {
 	num_curr_matches++;
 	i++;
