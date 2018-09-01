@@ -1,4 +1,4 @@
-Grading at Sat Sep  1 00:47:45 UTC 2018
+Grading at Sat Sep  1 00:52:45 UTC 2018
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
@@ -11,78 +11,66 @@ Testing add_empty_card(deck_t *)
 - Test passed
 Testing make_deck_exclude(deck_t *)
 Valgrind reported errors:
-==2257== Memcheck, a memory error detector
-==2257== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2257== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2257== Command: ./tester mde
-==2257== Parent PID: 2256
-==2257== 
-==2257== Conditional jump or move depends on uninitialised value(s)
-==2257==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2257==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x4036CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2257== 
-==2257== Conditional jump or move depends on uninitialised value(s)
-==2257==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2257==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2257==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x4036CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2257== 
-==2257== Use of uninitialised value of size 8
-==2257==    at 0x402055: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x4036CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2257== 
-==2257== Use of uninitialised value of size 8
-==2257==    at 0x402072: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x4036CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2257== 
-==2257== Use of uninitialised value of size 8
-==2257==    at 0x402096: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x4036CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2257== 
-==2257== Use of uninitialised value of size 8
-==2257==    at 0x4020B8: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x4036CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2257== 
-==2257== Conditional jump or move depends on uninitialised value(s)
-==2257==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2257==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x4036CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2257== 
-==2257== Conditional jump or move depends on uninitialised value(s)
-==2257==    at 0x4028FC: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x4037D4: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2257== 
-==2257== Conditional jump or move depends on uninitialised value(s)
-==2257==    at 0x402287: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x403888: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2257==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2257== 
-==2257== 
-==2257== HEAP SUMMARY:
-==2257==     in use at exit: 0 bytes in 0 blocks
-==2257==   total heap usage: 2,440 allocs, 2,440 frees, 155,200 bytes allocated
-==2257== 
-==2257== All heap blocks were freed -- no leaks are possible
-==2257== 
-==2257== For counts of detected and suppressed errors, rerun with: -v
-==2257== Use --track-origins=yes to see where uninitialised values come from
-==2257== ERROR SUMMARY: 4320 errors from 9 contexts (suppressed: 0 from 0)
+==2400== Memcheck, a memory error detector
+==2400== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2400== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2400== Command: ./tester mde
+==2400== Parent PID: 2399
+==2400== 
+==2400== Conditional jump or move depends on uninitialised value(s)
+==2400==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2400==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x40212A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x40368C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2400== 
+==2400== Conditional jump or move depends on uninitialised value(s)
+==2400==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2400==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2400==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x40212A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x40368C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2400== 
+==2400== Use of uninitialised value of size 8
+==2400==    at 0x402055: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x40212A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x40368C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2400== 
+==2400== Use of uninitialised value of size 8
+==2400==    at 0x402072: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x40212A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x40368C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2400== 
+==2400== Conditional jump or move depends on uninitialised value(s)
+==2400==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2400==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x40212A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x40368C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2400== 
+==2400== Conditional jump or move depends on uninitialised value(s)
+==2400==    at 0x4028BC: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x403794: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2400== 
+==2400== Conditional jump or move depends on uninitialised value(s)
+==2400==    at 0x402242: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x403848: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2400==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2400== 
+==2400== 
+==2400== HEAP SUMMARY:
+==2400==     in use at exit: 0 bytes in 0 blocks
+==2400==   total heap usage: 2,440 allocs, 2,440 frees, 155,200 bytes allocated
+==2400== 
+==2400== All heap blocks were freed -- no leaks are possible
+==2400== 
+==2400== For counts of detected and suppressed errors, rerun with: -v
+==2400== Use --track-origins=yes to see where uninitialised values come from
+==2400== ERROR SUMMARY: 2896 errors from 7 contexts (suppressed: 0 from 0)
 Testing build_remaining_deck(deck_t **, size_t)
 Testing with 1 hand
 Testing with 2 hands
@@ -91,226 +79,200 @@ Testing with 4 hands
 Testing with 5 hands
 Testing with 6 hands
 Valgrind reported errors:
-==2261== Memcheck, a memory error detector
-==2261== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2261== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2261== Command: ./tester brd
-==2261== Parent PID: 2260
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2261==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x4021F8: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2261==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2261==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x4021F8: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Use of uninitialised value of size 8
-==2261==    at 0x402055: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x4021F8: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Use of uninitialised value of size 8
-==2261==    at 0x402072: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x4021F8: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Use of uninitialised value of size 8
-==2261==    at 0x402096: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x4021F8: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Use of uninitialised value of size 8
-==2261==    at 0x4020B8: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x4021F8: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x401E98: deck_contains (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x402158: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x402238: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2261==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x402238: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2261==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2261==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x402238: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Use of uninitialised value of size 8
-==2261==    at 0x402055: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x402238: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Use of uninitialised value of size 8
-==2261==    at 0x402072: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x402238: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Use of uninitialised value of size 8
-==2261==    at 0x402096: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x402238: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Use of uninitialised value of size 8
-==2261==    at 0x4020B8: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x402238: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2261==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40216F: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x402238: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x4028FC: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x403460: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x402901: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x403460: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x402935: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x403460: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x402957: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x403460: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x402AF9: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x403460: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x402B0F: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x403460: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x402B37: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x403460: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x40347D: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x403496: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== Conditional jump or move depends on uninitialised value(s)
-==2261==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2261==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x4021F8: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x40332C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2261==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2261== 
-==2261== 
-==2261== HEAP SUMMARY:
-==2261==     in use at exit: 15,792 bytes in 1,029 blocks
-==2261==   total heap usage: 7,900 allocs, 6,871 frees, 454,768 bytes allocated
-==2261== 
-==2261== LEAK SUMMARY:
-==2261==    definitely lost: 1,344 bytes in 84 blocks
-==2261==    indirectly lost: 14,448 bytes in 945 blocks
-==2261==      possibly lost: 0 bytes in 0 blocks
-==2261==    still reachable: 0 bytes in 0 blocks
-==2261==         suppressed: 0 bytes in 0 blocks
-==2261== Rerun with --leak-check=full to see details of leaked memory
-==2261== 
-==2261== For counts of detected and suppressed errors, rerun with: -v
-==2261== Use --track-origins=yes to see where uninitialised values come from
-==2261== ERROR SUMMARY: 138537 errors from 24 contexts (suppressed: 0 from 0)
+==2404== Memcheck, a memory error detector
+==2404== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2404== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2404== Command: ./tester brd
+==2404== Parent PID: 2403
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2404==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021B3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2404==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2404==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021B3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Use of uninitialised value of size 8
+==2404==    at 0x402055: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021B3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Use of uninitialised value of size 8
+==2404==    at 0x402072: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021B3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x401E98: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x402113: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021F3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2404==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x40212A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021F3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2404==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2404==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x40212A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021F3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Use of uninitialised value of size 8
+==2404==    at 0x402055: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x40212A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021F3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Use of uninitialised value of size 8
+==2404==    at 0x402072: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x40212A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021F3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2404==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x40212A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021F3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x4028BC: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x403420: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x4028C1: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x403420: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x4028F5: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x403420: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x402917: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x403420: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x402AB9: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x403420: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x402ACF: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x403420: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x402AF7: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x403420: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x40343D: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x403456: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== Conditional jump or move depends on uninitialised value(s)
+==2404==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2404==    by 0x402025: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4021B3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x4032EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2404==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2404== 
+==2404== 
+==2404== HEAP SUMMARY:
+==2404==     in use at exit: 15,792 bytes in 1,029 blocks
+==2404==   total heap usage: 7,900 allocs, 6,871 frees, 454,768 bytes allocated
+==2404== 
+==2404== LEAK SUMMARY:
+==2404==    definitely lost: 1,344 bytes in 84 blocks
+==2404==    indirectly lost: 14,448 bytes in 945 blocks
+==2404==      possibly lost: 0 bytes in 0 blocks
+==2404==    still reachable: 0 bytes in 0 blocks
+==2404==         suppressed: 0 bytes in 0 blocks
+==2404== Rerun with --leak-check=full to see details of leaked memory
+==2404== 
+==2404== For counts of detected and suppressed errors, rerun with: -v
+==2404== Use --track-origins=yes to see where uninitialised values come from
+==2404== ERROR SUMMARY: 134169 errors from 20 contexts (suppressed: 0 from 0)
 Testing get_match_count(deck_t *)
 timeout: the monitored command dumped core
 Valgrind reported errors:
-==2265== Memcheck, a memory error detector
-==2265== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2265== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2265== Command: ./tester gmc
-==2265== Parent PID: 2264
-==2265== 
-==2265== Invalid read of size 8
-==2265==    at 0x401538: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
-==2265==    by 0x402F39: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==2265==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2265==  Address 0x52042d0 is 0 bytes after a block of size 16 alloc'd
-==2265==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2265==    by 0x402DE6: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==2265==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2265== 
-==2265== Invalid read of size 4
-==2265==    at 0x40153B: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
-==2265==    by 0x402F39: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==2265==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2265==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2265== 
-==2265== 
-==2265== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2265==  Access not within mapped region at address 0x0
-==2265==    at 0x40153B: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
-==2265==    by 0x402F39: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
-==2265==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==2265==  If you believe this happened as a result of a stack
-==2265==  overflow in your program's main thread (unlikely but
-==2265==  possible), you can try to increase the size of the
-==2265==  main thread stack using the --main-stacksize= flag.
-==2265==  The main thread stack size used in this run was 8388608.
-==2265== 
-==2265== HEAP SUMMARY:
-==2265==     in use at exit: 112 bytes in 10 blocks
-==2265==   total heap usage: 14 allocs, 4 frees, 136 bytes allocated
-==2265== 
-==2265== LEAK SUMMARY:
-==2265==    definitely lost: 8 bytes in 1 blocks
-==2265==    indirectly lost: 0 bytes in 0 blocks
-==2265==      possibly lost: 0 bytes in 0 blocks
-==2265==    still reachable: 104 bytes in 9 blocks
-==2265==         suppressed: 0 bytes in 0 blocks
-==2265== Rerun with --leak-check=full to see details of leaked memory
-==2265== 
-==2265== For counts of detected and suppressed errors, rerun with: -v
-==2265== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==2408== Memcheck, a memory error detector
+==2408== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2408== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2408== Command: ./tester gmc
+==2408== Parent PID: 2407
+==2408== 
+==2408== Invalid read of size 8
+==2408==    at 0x401538: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==2408==    by 0x402EF9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==2408==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2408==  Address 0x52042d0 is 0 bytes after a block of size 16 alloc'd
+==2408==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2408==    by 0x402DA6: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==2408==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2408== 
+==2408== Invalid read of size 4
+==2408==    at 0x40153B: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==2408==    by 0x402EF9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==2408==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2408==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2408== 
+==2408== 
+==2408== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==2408==  Access not within mapped region at address 0x0
+==2408==    at 0x40153B: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==2408==    by 0x402EF9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==2408==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==2408==  If you believe this happened as a result of a stack
+==2408==  overflow in your program's main thread (unlikely but
+==2408==  possible), you can try to increase the size of the
+==2408==  main thread stack using the --main-stacksize= flag.
+==2408==  The main thread stack size used in this run was 8388608.
+==2408== 
+==2408== HEAP SUMMARY:
+==2408==     in use at exit: 112 bytes in 10 blocks
+==2408==   total heap usage: 14 allocs, 4 frees, 136 bytes allocated
+==2408== 
+==2408== LEAK SUMMARY:
+==2408==    definitely lost: 8 bytes in 1 blocks
+==2408==    indirectly lost: 0 bytes in 0 blocks
+==2408==      possibly lost: 0 bytes in 0 blocks
+==2408==    still reachable: 104 bytes in 9 blocks
+==2408==         suppressed: 0 bytes in 0 blocks
+==2408== Rerun with --leak-check=full to see details of leaked memory
+==2408== 
+==2408== For counts of detected and suppressed errors, rerun with: -v
+==2408== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
