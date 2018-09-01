@@ -53,7 +53,7 @@ card_t * add_empty_card(deck_t * deck) {
 deck_t * make_deck_exclude(deck_t * excluded_cards) {
   deck_t * d = malloc(sizeof(*d));
   d->n_cards = 0;
-  d->cards = malloc(sizeof(*d->cards);
+  d->cards = malloc(sizeof(*d->cards));
   card_t c;
   for(unsigned i=0; i<52; i++) {
     c = card_from_num(i);
