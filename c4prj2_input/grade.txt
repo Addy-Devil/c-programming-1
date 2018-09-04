@@ -1,30 +1,19 @@
-Grading at Tue Sep  4 19:22:49 UTC 2018
+Grading at Tue Sep  4 19:24:37 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
 future.c: In function ‘add_pointer’:
-future.c:20:23: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-   if (fc->decks[index]->n_cards != 1) {
-                       ^
-future.c:21:21: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-     fc->decks[index]->cards = realloc(fc->decks[index]->n_cards * sizeof(*fc->decks[index]->cards));
-                     ^
-future.c:21:55: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-     fc->decks[index]->cards = realloc(fc->decks[index]->n_cards * sizeof(*fc->decks[index]->cards));
-                                                       ^
-future.c:21:91: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-     fc->decks[index]->cards = realloc(fc->decks[index]->n_cards * sizeof(*fc->decks[index]->cards));
-                                                                                           ^
-future.c:21:31: error: too few arguments to function ‘realloc’
-     fc->decks[index]->cards = realloc(fc->decks[index]->n_cards * sizeof(*fc->decks[index]->cards));
-                               ^
-future.c:23:19: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-   fc->decks[index]->cards[fc->decks[index]->n_cards-1] = ptr;
-                   ^
-future.c:23:43: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-   fc->decks[index]->cards[fc->decks[index]->n_cards-1] = ptr;
-                                           ^
+future.c:21:38: error: passing argument 1 of ‘realloc’ makes pointer from integer without a cast [-Werror=int-conversion]
+     fc->decks[index].cards = realloc(fc->decks[index].n_cards * sizeof(*fc->decks[index].cards));
+                                      ^
+In file included from future.c:2:0:
+/usr/include/stdlib.h:480:14: note: expected ‘void *’ but argument is of type ‘long unsigned int’
+ extern void *realloc (void *__ptr, size_t __size)
+              ^
+future.c:21:30: error: too few arguments to function ‘realloc’
+     fc->decks[index].cards = realloc(fc->decks[index].n_cards * sizeof(*fc->decks[index].cards));
+                              ^
 future.c: In function ‘future_cards_from_deck’:
 future.c:40:26: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
      for (size_t j=0; j<fc->deck[i]->n_cards; j++) {
@@ -48,6 +37,7 @@ future.c:42:55: error: expected statement before ‘]’ token
 future.c:42:56: error: expected expression before ‘->’ token
        fc->decks[i]->cards[j]->value = deck[i]->cardspj]->value;
                                                         ^
+cc1: all warnings being treated as errors
 Compilation of future.c failed
 
 Overall Grade: F
