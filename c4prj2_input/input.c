@@ -19,7 +19,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     char * question = "?";
     if (strcmp(str, question) == 0) {
       size_t index;
-      int n = atoi(*(str+1));
+      int n = atoi(str+1);
       index = (size_t)n;
       card_t * ptr = add_empty_card(deck);
       add_future_card(fc, index, ptr);
