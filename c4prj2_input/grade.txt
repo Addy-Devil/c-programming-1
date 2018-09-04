@@ -1,28 +1,15 @@
-Grading at Tue Sep  4 19:26:58 UTC 2018
+Grading at Tue Sep  4 19:51:32 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
-Linking input.o, future.o deck.o, cards.o, and our tester
-Testing with input file with 
- o 1 hand
- o No unknown/future cards
-Your file did not match the expected ouput
-Test case failed
-Testing with input file with 
- o Many hands
- o No unknown/future cards
-Your file did not match the expected ouput
-Test case failed
-Testing with input file with 
- o Many hands
- o 1 unknown/future cards per hand
-Your file did not match the expected ouput
-Test case failed
-Testing with input file with 
- o Many hands
- o Many unknown/future cards per hand
-Your file did not match the expected ouput
-Test case failed
+future.c: In function ‘future_cards_from_deck’:
+future.c:41:41: error: request for member ‘cards’ in something not a structure or union
+       fc->decks[i].cards[j]->suit = deck.cards[i]->suit;
+                                         ^
+future.c:42:42: error: request for member ‘cards’ in something not a structure or union
+       fc->decks[i].cards[j]->value = deck.cards[i]->value;
+                                          ^
+Compilation of future.c failed
 
 Overall Grade: F
