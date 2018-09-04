@@ -13,7 +13,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   deck->n_cards = 0;
   
   //sep the string on spaces
-  while(*str != '\n') {
+  while(str != '\n') {
     deck->n_cards++;
     deck->cards = realloc(deck->cards, deck->n_cards * sizeof(*deck->cards));
     if (strcmp(*str, '?') == 0) {
