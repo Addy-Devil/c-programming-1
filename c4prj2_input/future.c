@@ -10,7 +10,7 @@ void malloc_new_decks(future_cards_t * fc, size_t index) {
     deck_t * deck = malloc(sizeof(*deck));
     deck->cards = malloc(sizeof(*deck->cards));
     deck->n_cards = 0;
-    fc->decks[i] = deck;
+    fc->decks[i] = *deck;
   }
   fc->n_decks = index+1;
 }
