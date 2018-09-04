@@ -16,15 +16,11 @@ void malloc_new_decks(future_cards_t * fc, size_t index) {
 }
 
 void add_pointer(future_cards_t * fc, size_t index, card_t * ptr) {
-  if (fc->deck[index]->n_cards == 0) {
-    fc->deck[index]->n_cards++;
-    fc->deck[index]->cards[0] = ptr;
-  }
-  else {
-    fc->deck[index]->n_cards++;
+  fc->deck[index]->n_cards++;
+  if (fc->deck[index]->n_cards != 1) {
     fc->deck[index]->cards = realloc(fc->deck[index]->n_cards * sizeof(*fc->deck[index]->cards));
-    fc->deck[index]->cards[fc->deck[index]->n_cards-1] = ptr;
   }
+  fc->deck[index]->cards[fc->deck[index]->n_cards-1] = ptr;
 }
 
 void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
@@ -35,3 +31,15 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
   add_pointer(fc, index, ptr);
 }
 
+void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
+  if (fc->n_decks != deck->n_cards) {
+    fprintf(stderr, "There must be the same number of cards in the shuffled deck as there are decks in the future cards\n");
+    return;
+  }
+  for (size_t i=0; i<deck->n_cards; i++) {
+    for (size_t j=0; j<fc->deck[i]->n_cards; j++) {
+      fc->deck[i]->cards[j]->suit = deck[i]->cards[j]->suit;
+      fc->deck[i]->cards[j]->value = deck[i]->cardspj]->value;
+    }
+  }
+}
