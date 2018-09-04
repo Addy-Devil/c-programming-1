@@ -7,10 +7,12 @@
 #include "future.h"
 #include "input.h"
 
-void remove_newline(char * str) {
+char * remove_newline(char * str) {
+  char newstr = strdup(str);
   char * pos;
-  pos = strchr(str, '\n');
+  pos = strchr(newstr, '\n');
   *pos = '\0';
+  return newstr;
 }
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc) {
@@ -37,6 +39,11 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   }
   free(newstr);
 
+  if (deck->n_cards < 5) {
+    fprintf(stderr, "Hand contined less than 5 cards:\nLine: %s\n", str);
+    return NULL;
+  }
+  
   return deck;
 }
 
