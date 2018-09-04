@@ -1,10 +1,60 @@
-Grading at Tue Sep  4 19:18:36 UTC 2018
+Grading at Tue Sep  4 19:19:01 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c:4:2: error: invalid preprocessing directive #incdude
- #incdude "deck.h"
-  ^
-Compilation of input.c failed
+Compiling future.c -> future.o
+future.c: In function ‘malloc_new_decks’:
+future.c:13:18: error: incompatible types when assigning to type ‘deck_t {aka struct deck_tag}’ from type ‘deck_t * {aka struct deck_tag *}’
+     fc->decks[i] = deck;
+                  ^
+future.c: In function ‘add_pointer’:
+future.c:19:5: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
+   fc->deck[index]->n_cards++;
+     ^
+future.c:20:9: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
+   if (fc->deck[index]->n_cards != 1) {
+         ^
+future.c:21:7: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
+     fc->deck[index]->cards = realloc(fc->deck[index]->n_cards * sizeof(*fc->deck[index]->cards));
+       ^
+future.c:21:40: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
+     fc->deck[index]->cards = realloc(fc->deck[index]->n_cards * sizeof(*fc->deck[index]->cards));
+                                        ^
+future.c:21:75: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
+     fc->deck[index]->cards = realloc(fc->deck[index]->n_cards * sizeof(*fc->deck[index]->cards));
+                                                                           ^
+future.c:21:30: error: too few arguments to function ‘realloc’
+     fc->deck[index]->cards = realloc(fc->deck[index]->n_cards * sizeof(*fc->deck[index]->cards));
+                              ^
+future.c:23:5: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
+   fc->deck[index]->cards[fc->deck[index]->n_cards-1] = ptr;
+     ^
+future.c:23:28: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
+   fc->deck[index]->cards[fc->deck[index]->n_cards-1] = ptr;
+                            ^
+future.c: In function ‘future_cards_from_deck’:
+future.c:40:26: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
+     for (size_t j=0; j<fc->deck[i]->n_cards; j++) {
+                          ^
+future.c:41:9: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
+       fc->deck[i]->cards[j]->suit = deck[i]->cards[j]->suit;
+         ^
+future.c:41:44: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+       fc->deck[i]->cards[j]->suit = deck[i]->cards[j]->suit;
+                                            ^
+future.c:42:9: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
+       fc->deck[i]->cards[j]->value = deck[i]->cardspj]->value;
+         ^
+future.c:42:45: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+       fc->deck[i]->cards[j]->value = deck[i]->cardspj]->value;
+                                             ^
+future.c:42:54: error: expected ‘;’ before ‘]’ token
+       fc->deck[i]->cards[j]->value = deck[i]->cardspj]->value;
+                                                      ^
+future.c:42:54: error: expected statement before ‘]’ token
+future.c:42:55: error: expected expression before ‘->’ token
+       fc->deck[i]->cards[j]->value = deck[i]->cardspj]->value;
+                                                       ^
+Compilation of future.c failed
 
 Overall Grade: F
