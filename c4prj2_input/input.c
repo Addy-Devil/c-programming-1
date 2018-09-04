@@ -7,5 +7,7 @@
 #include "input.h"
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
-  bla;
+  deck_t ** deck_p = malloc(sizeof(*deck_p));
+
+  return deck_p;
 }
