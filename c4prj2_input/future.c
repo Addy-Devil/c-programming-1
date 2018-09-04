@@ -37,9 +37,9 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
     return;
   }
   for (size_t i=0; i<deck->n_cards; i++) {
-    for (size_t j=0; j<fc->deck[i]->n_cards; j++) {
-      fc->decks[i]->cards[j]->suit = deck[i]->cards[j]->suit;
-      fc->decks[i]->cards[j]->value = deck[i]->cardspj]->value;
+    for (size_t j=0; j<fc->decks[i].n_cards; j++) {
+      fc->decks[i].cards[j]->suit = deck[i].cards[j]->suit;
+      fc->decks[i].cards[j]->value = deck[i].cards[j]->value;
     }
   }
 }
