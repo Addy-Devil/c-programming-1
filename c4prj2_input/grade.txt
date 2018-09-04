@@ -1,28 +1,49 @@
-Grading at Tue Sep  4 19:51:56 UTC 2018
+Grading at Tue Sep  4 21:32:20 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-Compiling future.c -> future.o
-Linking input.o, future.o deck.o, cards.o, and our tester
-Testing with input file with 
- o 1 hand
- o No unknown/future cards
-Your file did not match the expected ouput
-Test case failed
-Testing with input file with 
- o Many hands
- o No unknown/future cards
-Your file did not match the expected ouput
-Test case failed
-Testing with input file with 
- o Many hands
- o 1 unknown/future cards per hand
-Your file did not match the expected ouput
-Test case failed
-Testing with input file with 
- o Many hands
- o Many unknown/future cards per hand
-Your file did not match the expected ouput
-Test case failed
+input.c: In function ‘hand_from_string’:
+input.c:21:34: error: passing argument 1 of ‘remove_newline’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   char * newstr = remove_newline(str);
+                                  ^
+input.c:10:6: note: expected ‘char *’ but argument is of type ‘const char *’
+ void remove_newline(char * str) {
+      ^
+input.c:21:19: error: void value not ignored as it ought to be
+   char * newstr = remove_newline(str);
+                   ^
+input.c:23:25: error: passing argument 2 of ‘strsep’ makes pointer from integer without a cast [-Werror=int-conversion]
+   while(strsep(&newstr, ' ') != NULL) {
+                         ^
+In file included from input.c:3:0:
+/usr/include/string.h:552:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strsep (char **__restrict __stringp,
+              ^
+input.c:26:9: error: implicit declaration of function ‘strcomp’ [-Werror=implicit-function-declaration]
+     if (strcomp(*newstr, '?') == 0) {
+         ^
+input.c:28:20: error: passing argument 1 of ‘atoi’ makes pointer from integer without a cast [-Werror=int-conversion]
+       int n = atoi(*(newstr+1));
+                    ^
+In file included from input.c:2:0:
+/usr/include/stdlib.h:147:12: note: expected ‘const char *’ but argument is of type ‘char’
+ extern int atoi (const char *__nptr)
+            ^
+input.c:34:20: error: incompatible types when initializing type ‘card_t * {aka struct card_tag *}’ using type ‘card_t {aka struct card_tag}’
+       card_t * c = card_from_letters(*newstr, *(newstr+1));
+                    ^
+input.c: In function ‘read_input’:
+input.c:50:5: error: value computed is not used [-Werror=unused-value]
+     *n_hands++;
+     ^
+input.c:60:10: error: ‘deck_p’ undeclared (first use in this function)
+   return deck_p;
+          ^
+input.c:60:10: note: each undeclared identifier is reported only once for each function it appears in
+input.c:61:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation of input.c failed
 
 Overall Grade: F
