@@ -11,24 +11,24 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   deck_t * deck = malloc(sizeof(*deck));
   deck->cards = malloc(sizeof(*deck->cards));
   deck->n_cards = 0;
-  
+  int i = 0;
   //sep the string on spaces
-  while(*str != '\n') {
+  while(*(str+i*3) != '\n') {
     deck->n_cards++;
     deck->cards = realloc(deck->cards, deck->n_cards * sizeof(*deck->cards));
     char * question = "?";
-    if (strcmp(str, question) == 0) {
+    if (strcmp((str+i*3), question) == 0) {
       size_t index;
-      int n = atoi(str+1);
+      int n = atoi((str+i*3)+1);
       index = (size_t)n;
       card_t * ptr = add_empty_card(deck);
       add_future_card(fc, index, ptr);
     }
     else {
-      card_t c = card_from_letters(*str, *(str+1));
+      card_t c = card_from_letters(*(str+i*3), *((str+i*3)+1));
       add_card_to(deck, c);
     }
-    str+=3;
+    i++;
   }
 
   if (deck->n_cards < 5) {
