@@ -7,37 +7,28 @@
 #include "future.h"
 #include "input.h"
 
-char * remove_newline(char * str) {
-  char newstr = strdup(str);
-  char * pos;
-  pos = strchr(newstr, '\n');
-  *pos = '\0';
-  return newstr;
-}
-
 deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   deck_t * deck = malloc(sizeof(*deck));
   deck->cards = malloc(sizeof(*deck->cards));
   deck->n_cards = 0;
   
-  char * newstr = remove_newline(str);
   //sep the string on spaces
-  while(strsep(&newstr, ' ') != NULL) {
+  while(*str != '\n') {
     deck->n_cards++;
     deck->cards = realloc(deck->cards, deck->n_cards * sizeof(*deck->cards));
-    if (strcomp(*newstr, '?') == 0) {
+    if (strcomp(*str, '?') == 0) {
       size_t index;
-      int n = atoi(*(newstr+1));
+      int n = atoi(*(str+1));
       index = (size_t)n;
       card_t * ptr = add_empty_card(deck);
       add_future_card(fc, index, ptr);
     }
     else {
-      card_t * c = card_from_letters(*newstr, *(newstr+1));
+      card_t * c = card_from_letters(*str, *(str+1));
       add_card_to(deck, *c);
     }
+    str+=3;
   }
-  free(newstr);
 
   if (deck->n_cards < 5) {
     fprintf(stderr, "Hand contined less than 5 cards:\nLine: %s\n", str);
