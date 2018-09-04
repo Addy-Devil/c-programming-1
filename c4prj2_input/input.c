@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "cards.h"
-#incdude "deck.h"
+#include "deck.h"
 #include "eval.h"
 #include "future.h"
 #include "input.h"
