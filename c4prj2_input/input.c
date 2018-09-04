@@ -25,8 +25,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       add_future_card(fc, index, ptr);
     }
     else {
-      card_t * c = card_from_letters(*str, *(str+1));
-      add_card_to(deck, *c);
+      card_t c = card_from_letters(*str, *(str+1));
+      add_card_to(deck, c);
     }
     str+=3;
   }
@@ -56,5 +56,5 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
   }
   free(line);
 
-  return deck_p;
+  return deck_ts;
 }
