@@ -1,12 +1,8 @@
-Grading at Tue Sep  4 19:19:01 UTC 2018
+Grading at Tue Sep  4 19:20:02 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
-future.c: In function ‘malloc_new_decks’:
-future.c:13:18: error: incompatible types when assigning to type ‘deck_t {aka struct deck_tag}’ from type ‘deck_t * {aka struct deck_tag *}’
-     fc->decks[i] = deck;
-                  ^
 future.c: In function ‘add_pointer’:
 future.c:19:5: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
    fc->deck[index]->n_cards++;
