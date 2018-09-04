@@ -1,31 +1,28 @@
-Grading at Tue Sep  4 19:25:34 UTC 2018
+Grading at Tue Sep  4 19:26:58 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
-future.c: In function ‘future_cards_from_deck’:
-future.c:40:26: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
-     for (size_t j=0; j<fc->deck[i]->n_cards; j++) {
-                          ^
-future.c:41:19: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-       fc->decks[i]->cards[j]->suit = deck[i]->cards[j]->suit;
-                   ^
-future.c:41:45: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-       fc->decks[i]->cards[j]->suit = deck[i]->cards[j]->suit;
-                                             ^
-future.c:42:19: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-       fc->decks[i]->cards[j]->value = deck[i]->cardspj]->value;
-                   ^
-future.c:42:46: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-       fc->decks[i]->cards[j]->value = deck[i]->cardspj]->value;
-                                              ^
-future.c:42:55: error: expected ‘;’ before ‘]’ token
-       fc->decks[i]->cards[j]->value = deck[i]->cardspj]->value;
-                                                       ^
-future.c:42:55: error: expected statement before ‘]’ token
-future.c:42:56: error: expected expression before ‘->’ token
-       fc->decks[i]->cards[j]->value = deck[i]->cardspj]->value;
-                                                        ^
-Compilation of future.c failed
+Linking input.o, future.o deck.o, cards.o, and our tester
+Testing with input file with 
+ o 1 hand
+ o No unknown/future cards
+Your file did not match the expected ouput
+Test case failed
+Testing with input file with 
+ o Many hands
+ o No unknown/future cards
+Your file did not match the expected ouput
+Test case failed
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+Your file did not match the expected ouput
+Test case failed
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+Your file did not match the expected ouput
+Test case failed
 
 Overall Grade: F
