@@ -18,7 +18,7 @@ void malloc_new_decks(future_cards_t * fc, size_t index) {
 void add_pointer(future_cards_t * fc, size_t index, card_t * ptr) {
   fc->decks[index].n_cards++;
   if (fc->decks[index].n_cards != 1) {
-    fc->decks[index].cards = realloc(fc->decks[index].n_cards * sizeof(*fc->decks[index].cards));
+    fc->decks[index].cards = realloc(fc->decks[index].cards, fc->decks[index].n_cards * sizeof(*fc->decks[index].cards));
   }
   fc->decks[index].cards[fc->decks[index].n_cards-1] = ptr;
 }
