@@ -1,12 +1,240 @@
-Grading at Tue Sep  4 22:49:35 UTC 2018
+Grading at Tue Sep  4 22:52:09 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c: In function ‘read_input’:
-input.c:49:5: error: value computed is not used [-Werror=unused-value]
-     *n_hands++;
-     ^
-cc1: all warnings being treated as errors
-Compilation of input.c failed
+Compiling future.c -> future.o
+Linking input.o, future.o deck.o, cards.o, and our tester
+Testing with input file with 
+ o 1 hand
+ o No unknown/future cards
+Valgrind reported errors:
+==3281== Memcheck, a memory error detector
+==3281== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3281== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3281== Command: ./tester hands.txt draw.txt
+==3281== Parent PID: 3280
+==3281== 
+==3281== Conditional jump or move depends on uninitialised value(s)
+==3281==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3281==    by 0x400CAB: read_input (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x401AF6: main (test-input.c:69)
+==3281== 
+==3281== Conditional jump or move depends on uninitialised value(s)
+==3281==    at 0x401721: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x401AF6: main (test-input.c:69)
+==3281== 
+==3281== Conditional jump or move depends on uninitialised value(s)
+==3281==    at 0x401726: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x401AF6: main (test-input.c:69)
+==3281== 
+==3281== Conditional jump or move depends on uninitialised value(s)
+==3281==    at 0x40172B: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x401AF6: main (test-input.c:69)
+==3281== 
+==3281== Conditional jump or move depends on uninitialised value(s)
+==3281==    at 0x40152E: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x40175D: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x401AF6: main (test-input.c:69)
+==3281== 
+==3281== 
+==3281== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==3281==    at 0x4E6F428: raise (raise.c:54)
+==3281==    by 0x4E71029: abort (abort.c:89)
+==3281==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==3281==    by 0x4E67C81: __assert_fail (assert.c:101)
+==3281==    by 0x401550: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x40175D: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3281==    by 0x401AF6: main (test-input.c:69)
+==3281== 
+==3281== HEAP SUMMARY:
+==3281==     in use at exit: 864 bytes in 11 blocks
+==3281==   total heap usage: 30 allocs, 19 frees, 6,016 bytes allocated
+==3281== 
+==3281== LEAK SUMMARY:
+==3281==    definitely lost: 0 bytes in 0 blocks
+==3281==    indirectly lost: 0 bytes in 0 blocks
+==3281==      possibly lost: 0 bytes in 0 blocks
+==3281==    still reachable: 864 bytes in 11 blocks
+==3281==         suppressed: 0 bytes in 0 blocks
+==3281== Rerun with --leak-check=full to see details of leaked memory
+==3281== 
+==3281== For counts of detected and suppressed errors, rerun with: -v
+==3281== Use --track-origins=yes to see where uninitialised values come from
+==3281== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+Testing with input file with 
+ o Many hands
+ o No unknown/future cards
+Valgrind reported errors:
+==3286== Memcheck, a memory error detector
+==3286== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3286== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3286== Command: ./tester hands.txt draw.txt
+==3286== Parent PID: 3285
+==3286== 
+==3286== Conditional jump or move depends on uninitialised value(s)
+==3286==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3286==    by 0x400CAB: read_input (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x401AF6: main (test-input.c:69)
+==3286== 
+==3286== Conditional jump or move depends on uninitialised value(s)
+==3286==    at 0x401721: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x401AF6: main (test-input.c:69)
+==3286== 
+==3286== Conditional jump or move depends on uninitialised value(s)
+==3286==    at 0x401726: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x401AF6: main (test-input.c:69)
+==3286== 
+==3286== Conditional jump or move depends on uninitialised value(s)
+==3286==    at 0x40172B: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x401AF6: main (test-input.c:69)
+==3286== 
+==3286== Conditional jump or move depends on uninitialised value(s)
+==3286==    at 0x40152E: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x40175D: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x401AF6: main (test-input.c:69)
+==3286== 
+==3286== 
+==3286== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==3286==    at 0x4E6F428: raise (raise.c:54)
+==3286==    by 0x4E71029: abort (abort.c:89)
+==3286==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==3286==    by 0x4E67C81: __assert_fail (assert.c:101)
+==3286==    by 0x401550: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x40175D: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3286==    by 0x401AF6: main (test-input.c:69)
+==3286== 
+==3286== HEAP SUMMARY:
+==3286==     in use at exit: 864 bytes in 11 blocks
+==3286==   total heap usage: 30 allocs, 19 frees, 6,016 bytes allocated
+==3286== 
+==3286== LEAK SUMMARY:
+==3286==    definitely lost: 0 bytes in 0 blocks
+==3286==    indirectly lost: 0 bytes in 0 blocks
+==3286==      possibly lost: 0 bytes in 0 blocks
+==3286==    still reachable: 864 bytes in 11 blocks
+==3286==         suppressed: 0 bytes in 0 blocks
+==3286== Rerun with --leak-check=full to see details of leaked memory
+==3286== 
+==3286== For counts of detected and suppressed errors, rerun with: -v
+==3286== Use --track-origins=yes to see where uninitialised values come from
+==3286== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+Valgrind reported errors:
+==3292== Memcheck, a memory error detector
+==3292== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3292== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3292== Command: ./tester h.txt d.txt
+==3292== Parent PID: 3291
+==3292== 
+==3292== Conditional jump or move depends on uninitialised value(s)
+==3292==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3292==    by 0x400CAB: read_input (in /graderhome/work/c4prj2_input/tester)
+==3292==    by 0x401AF6: main (test-input.c:69)
+==3292== 
+==3292== Conditional jump or move depends on uninitialised value(s)
+==3292==    at 0x40152E: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==3292==    by 0x40175D: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3292==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3292==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3292==    by 0x401AF6: main (test-input.c:69)
+==3292== 
+==3292== 
+==3292== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==3292==    at 0x4E6F428: raise (raise.c:54)
+==3292==    by 0x4E71029: abort (abort.c:89)
+==3292==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==3292==    by 0x4E67C81: __assert_fail (assert.c:101)
+==3292==    by 0x401550: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==3292==    by 0x40175D: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3292==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3292==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3292==    by 0x401AF6: main (test-input.c:69)
+==3292== 
+==3292== HEAP SUMMARY:
+==3292==     in use at exit: 840 bytes in 10 blocks
+==3292==   total heap usage: 27 allocs, 17 frees, 5,776 bytes allocated
+==3292== 
+==3292== LEAK SUMMARY:
+==3292==    definitely lost: 0 bytes in 0 blocks
+==3292==    indirectly lost: 0 bytes in 0 blocks
+==3292==      possibly lost: 0 bytes in 0 blocks
+==3292==    still reachable: 840 bytes in 10 blocks
+==3292==         suppressed: 0 bytes in 0 blocks
+==3292== Rerun with --leak-check=full to see details of leaked memory
+==3292== 
+==3292== For counts of detected and suppressed errors, rerun with: -v
+==3292== Use --track-origins=yes to see where uninitialised values come from
+==3292== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+Valgrind reported errors:
+==3298== Memcheck, a memory error detector
+==3298== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3298== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3298== Command: ./tester i1 i2
+==3298== Parent PID: 3297
+==3298== 
+==3298== Conditional jump or move depends on uninitialised value(s)
+==3298==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3298==    by 0x400CAB: read_input (in /graderhome/work/c4prj2_input/tester)
+==3298==    by 0x401AF6: main (test-input.c:69)
+==3298== 
+==3298== Conditional jump or move depends on uninitialised value(s)
+==3298==    at 0x40152E: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==3298==    by 0x40175D: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3298==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3298==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3298==    by 0x401AF6: main (test-input.c:69)
+==3298== 
+==3298== 
+==3298== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==3298==    at 0x4E6F428: raise (raise.c:54)
+==3298==    by 0x4E71029: abort (abort.c:89)
+==3298==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==3298==    by 0x4E67C81: __assert_fail (assert.c:101)
+==3298==    by 0x401550: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==3298==    by 0x40175D: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==3298==    by 0x400BCE: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==3298==    by 0x400CC2: read_input (in /graderhome/work/c4prj2_input/tester)
+==3298==    by 0x401AF6: main (test-input.c:69)
+==3298== 
+==3298== HEAP SUMMARY:
+==3298==     in use at exit: 768 bytes in 7 blocks
+==3298==   total heap usage: 18 allocs, 11 frees, 5,248 bytes allocated
+==3298== 
+==3298== LEAK SUMMARY:
+==3298==    definitely lost: 0 bytes in 0 blocks
+==3298==    indirectly lost: 0 bytes in 0 blocks
+==3298==      possibly lost: 0 bytes in 0 blocks
+==3298==    still reachable: 768 bytes in 7 blocks
+==3298==         suppressed: 0 bytes in 0 blocks
+==3298== Rerun with --leak-check=full to see details of leaked memory
+==3298== 
+==3298== For counts of detected and suppressed errors, rerun with: -v
+==3298== Use --track-origins=yes to see where uninitialised values come from
+==3298== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
