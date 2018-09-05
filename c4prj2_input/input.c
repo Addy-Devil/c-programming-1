@@ -16,7 +16,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   while(1) {
     //deck->n_cards++;
     //deck->cards = realloc(deck->cards, deck->n_cards * sizeof(*deck->cards));
-    char chQuestion = 63;
+    char chQuestion = '?';
     if (*(str+i*3) == chQuestion) {
       size_t index;
       int n = atoi((str+i*3)+1);
