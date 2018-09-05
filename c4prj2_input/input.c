@@ -59,7 +59,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
       return NULL;
     }
     n_hands++;
-    deck_ts = realloc(deck_ts, *n_hands * sizeof(**deck_ts));
+    deck_ts = realloc(deck_ts, n_hands * sizeof(**deck_ts));
     deck_t * deck = hand_from_string(line, fc);
     deck_ts[i] = deck;
     free(line);
