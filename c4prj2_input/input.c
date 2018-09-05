@@ -15,8 +15,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   char * chNewline = "\n";
   //sep the string on spaces
   while(1) {
-    deck->n_cards++;
-    deck->cards = realloc(deck->cards, deck->n_cards * sizeof(*deck->cards));
+    //deck->n_cards++;
+    //deck->cards = realloc(deck->cards, deck->n_cards * sizeof(*deck->cards));
     char chQuestion = 63;
     if (*(str+i*3) == chQuestion) {
       size_t index;
@@ -26,7 +26,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       add_future_card(fc, index, ptr);
     }
     else {
-      printf("value: %c suit: %c\n", *(str+i*3), *((str+i*3)+1));
+      //printf("value: %c suit: %c\n", *(str+i*3), *((str+i*3)+1));
       card_t c = card_from_letters(*(str+i*3), *((str+i*3)+1));
       add_card_to(deck, c);
     }

@@ -13,7 +13,8 @@ int main(int argc, char ** argv) {
   
   card_t * ptr = add_empty_card(deck);
 
-  add_future_card(fc, 2, ptr);
+  size_t index = 1;
+  add_future_card(fc, index, ptr);
 
   for (int i=0; i<fc->n_decks; i++) {
     print_hand(&fc->decks[i]);
