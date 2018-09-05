@@ -3,7 +3,6 @@
 #include <string.h>
 #include "cards.h"
 #include "deck.h"
-#include "eval.h"
 #include "future.h"
 #include "input.h"
 
@@ -32,7 +31,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     }
     //break if the card is the last in the hand
     if (strcmp((str+i*3)+2, chNewline)==0) {
-      printf("breaking while loop\n");
+      //printf("breaking while loop\n");
       break;
     }
     i++;
