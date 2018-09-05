@@ -36,10 +36,6 @@ int main(int argc, char ** argv) {
     free_deck(deck_ts[i]);
   }
 
-  for(int i=0; i<fc->n_decks; i++) {
-    free_deck(fc->decks[i]);
-  }
-
   free(fc);
   
   exit(EXIT_SUCCESS);
