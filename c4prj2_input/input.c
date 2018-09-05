@@ -12,12 +12,13 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   deck->cards = malloc(sizeof(*deck->cards));
   deck->n_cards = 0;
   int i = 0;
+  char * chNewline = "\n";
   //sep the string on spaces
-  while(*(str+i*3) != '\n') {
+  while(1) {
     deck->n_cards++;
     deck->cards = realloc(deck->cards, deck->n_cards * sizeof(*deck->cards));
-    char * question = "?";
-    if (strcmp((str+i*3), question) == 0) {
+    char chQuestion = 63;
+    if (*(str+i*3) == chQuestion) {
       size_t index;
       int n = atoi((str+i*3)+1);
       index = (size_t)n;
@@ -25,8 +26,14 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       add_future_card(fc, index, ptr);
     }
     else {
+      printf("value: %c suit: %c\n", *(str+i*3), *((str+i*3)+1));
       card_t c = card_from_letters(*(str+i*3), *((str+i*3)+1));
       add_card_to(deck, c);
+    }
+    //break if the card is the last in the hand
+    if (strcmp((str+i*3)+2, chNewline)==0) {
+      printf("breaking while loop\n");
+      break;
     }
     i++;
   }
@@ -44,8 +51,13 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 
   char * line = NULL;
   size_t sz = 0;
+  ssize_t nChars;
   int i = 0;
-  while(getline(&line, &sz, f) > 0) {
+  while((nChars = getline(&line, &sz, f)) > 0) {
+    if (nChars < 15) {
+      fprintf(stderr, "Line did not have 5 cards\nLine: %s\n", line);
+      return NULL;
+    }
     n_hands++;
     deck_ts = realloc(deck_ts, *n_hands * sizeof(**deck_ts));
     deck_t * deck = hand_from_string(line, fc);
