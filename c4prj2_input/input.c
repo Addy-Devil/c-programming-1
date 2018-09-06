@@ -13,14 +13,29 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   int i = 0;
   char * chNewline = "\n";
   char chQuestion = '?';
-  
+
+  size_t length = strlen(str);
+ 
   while(1) {
     if (*(str+i*3) == chQuestion) {
-      size_t index;
-      int n = atoi((str+i*3)+1);
-      index = (size_t)n;
-      card_t * ptr = add_empty_card(deck);
-      add_future_card(fc, index, ptr);
+      if(*((str+i*3)+2) != ' ' && strcmp((str+i*3)+2, chNewline) != 0) {
+	size_t index;
+	char * chN = malloc(2*sizeof(*n));
+	chN = strcat(chN, str+i*3);
+	chN = strcat(chN, (str+i*3)+1);
+	int n = atoi(chN);
+	index = (size_t)n;
+	card_t * ptr = add_empty_card(deck);
+	add_future_card(fc, index, ptr);
+	free(chN);
+      }
+      else {
+	size_t index;
+	int n = atoi((str+i*3)+1);
+	index = (size_t)n;
+	card_t * ptr = add_empty_card(deck);
+	add_future_card(fc, index, ptr);
+      }
     }
     else {
       //printf("value: %c suit: %c\n", *(str+i*3), *((str+i*3)+1));
@@ -34,7 +49,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     }
     i++;
   }
-
+  
   if (deck->n_cards < 5) {
     fprintf(stderr, "Hand contined less than 5 cards:\nLine: %s\n", str);
     return NULL;
