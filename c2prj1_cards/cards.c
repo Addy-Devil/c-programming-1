@@ -104,6 +104,9 @@ card_t card_from_letters(char value_let, char suit_let) {
   else if (value_let==65) {
     temp.value = 14;
   }
+  else {
+    temp.value = 0;
+  }
 
   // now suits
   switch(suit_let) {
