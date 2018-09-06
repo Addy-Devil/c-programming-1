@@ -10,6 +10,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   deck_t * deck = malloc(sizeof(*deck));
   deck->cards = malloc(sizeof(*deck->cards));
   deck->n_cards = 0;
+  card_t * c = malloc(sizeof(*c));
+  deck->cards[0] = c;
   int i = 0;
   char * chNewline = "\n";
   //sep the string on spaces
