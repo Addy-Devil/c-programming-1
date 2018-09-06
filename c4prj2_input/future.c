@@ -8,9 +8,6 @@ void malloc_new_decks(future_cards_t * fc, size_t index) {
   fc->decks = realloc(fc->decks, (index+1) * sizeof(*fc->decks));
   for(size_t i=fc->n_decks; i<=index; i++) {
     deck_t * deck = malloc(sizeof(*deck));
-    deck->cards = malloc(sizeof(*deck->cards));
-    card_t * c = malloc(sizeof(*c));
-    deck->cards[0] = c;
     deck->n_cards = 0;
     fc->decks[i] = *deck;
   }
