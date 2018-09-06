@@ -35,7 +35,7 @@ int main(int argc, char ** argv) {
   
 
   for (int i=0; i<n_hands; i++) {
-    //free(deck_ts[i]->cards);
+    free(&deck_ts[i]->cards);
     free_deck(deck_ts[i]);
   }
 
