@@ -47,7 +47,13 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
   deck_t ** deck_ts = malloc(sizeof(**deck_ts));
-
+  deck_t * deck = malloc(sizeof(*deck));
+  deck->n_cards = 0;
+  deck->cards = malloc(sizeof(*deck->cards));
+  card_t * c = malloc(sizeof(*c));
+  deck->cards[0] = c;
+  deck_ts[0] = deck;
+  
   char * line = NULL;
   size_t sz = 0;
   ssize_t nChars;
