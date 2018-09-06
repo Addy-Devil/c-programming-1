@@ -10,15 +10,11 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   deck_t * deck = malloc(sizeof(*deck));
   deck->cards = malloc(sizeof(*deck->cards));
   deck->n_cards = 0;
-  card_t * c = malloc(sizeof(*c));
-  deck->cards[0] = c;
   int i = 0;
   char * chNewline = "\n";
-  //sep the string on spaces
+  char chQuestion = '?';
+  
   while(1) {
-    //deck->n_cards++;
-    //deck->cards = realloc(deck->cards, deck->n_cards * sizeof(*deck->cards));
-    char chQuestion = '?';
     if (*(str+i*3) == chQuestion) {
       size_t index;
       int n = atoi((str+i*3)+1);
@@ -49,12 +45,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
   deck_t ** deck_ts = malloc(sizeof(**deck_ts));
-  deck_t * deck = malloc(sizeof(*deck));
-  deck->n_cards = 0;
-  deck->cards = malloc(sizeof(*deck->cards));
-  card_t * c = malloc(sizeof(*c));
-  deck->cards[0] = c;
-  deck_ts[0] = deck;
   
   char * line = NULL;
   size_t sz = 0;
