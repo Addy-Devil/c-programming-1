@@ -19,7 +19,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     if (*(str+i*3) == chQuestion) {
       if(*((str+i*3)+2) != ' ' && strcmp((str+i*3)+2, chNewline) != 0) {
 	size_t index;
-	char * chN = malloc(2*sizeof(*n));
+	char * chN = malloc(2*sizeof(*chN));
 	chN = strcat(chN, str+i*3);
 	chN = strcat(chN, (str+i*3)+1);
 	int n = atoi(chN);
