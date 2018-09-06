@@ -42,7 +42,7 @@ const char * ranking_to_string(hand_ranking_t r) {
 }
 
 char value_letter(card_t c) {
-  if (c.value < 10) {
+  if (c.value>=2 && c.value < 10) {
     return 48 + c.value;
   }
   else if (c.value==10) {
@@ -57,8 +57,11 @@ char value_letter(card_t c) {
   else if (c.value==13) {
     return 75;
   }
-  else {
+  else if (c.value==14) {
     return 65;
+  }
+  else {
+    return 63;
   }
 }
 
