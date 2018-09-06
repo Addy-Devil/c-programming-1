@@ -77,8 +77,11 @@ char suit_letter(card_t c) {
   case CLUBS:
     return 'c';
     break;
-  default:
+  case DIAMONDS:
     return 'd';
+    break;
+  default:
+    return 0;
     break;
   }
 }
