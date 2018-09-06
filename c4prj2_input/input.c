@@ -14,7 +14,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   char * chNewline = "\n";
   char chQuestion = '?';
 
-  size_t length = strlen(str);
  
   while(1) {
     if (*(str+i*3) == chQuestion) {
