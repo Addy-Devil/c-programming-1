@@ -1,16 +1,12 @@
-Grading at Thu Sep  6 15:39:53 UTC 2018
+Grading at Thu Sep  6 15:40:28 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:23:32: error: ‘n’ undeclared (first use in this function)
+input.c:22:32: error: ‘n’ undeclared (first use in this function)
   char * chN = malloc(2*sizeof(*n));
                                 ^
-input.c:23:32: note: each undeclared identifier is reported only once for each function it appears in
-input.c:17:10: error: unused variable ‘length’ [-Werror=unused-variable]
-   size_t length = strlen(str);
-          ^
-cc1: all warnings being treated as errors
+input.c:22:32: note: each undeclared identifier is reported only once for each function it appears in
 Compilation of input.c failed
 
 Overall Grade: F
