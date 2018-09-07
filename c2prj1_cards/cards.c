@@ -81,7 +81,7 @@ char suit_letter(card_t c) {
     return 'd';
     break;
   default:
-    return 48+c.suit;
+    return 48;
     break;
   }
 }
