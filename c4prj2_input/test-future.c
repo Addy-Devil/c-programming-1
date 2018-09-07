@@ -13,7 +13,7 @@ int main(int argc, char ** argv) {
   
   card_t * ptr = add_empty_card(deck);
 
-  size_t index = 1;
+  size_t index = 0;
   add_future_card(fc, index, ptr);
 
   for (int i=0; i<fc->n_decks; i++) {
@@ -22,12 +22,15 @@ int main(int argc, char ** argv) {
 
   free_deck(deck);
 
-  /*
+  
   for (int i=0; i<fc->n_decks; i++) {
-    free(fc->decks[i].cards);
-    free(fc->decks[i]);
+    //free(&fc->decks[i].cards);
+    free_deck(&fc->decks[i]);
   }
-  */
+
+  free(&fc->decks);
+
+  free(fc);
   
   exit(EXIT_SUCCESS);
 }

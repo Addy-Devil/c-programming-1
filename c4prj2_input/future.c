@@ -25,7 +25,7 @@ void add_pointer(future_cards_t * fc, size_t index, card_t * ptr) {
 
 void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
   if (fc->n_decks==0) {
-    fc->decks=NULL;
+    fc->decks=malloc(sizeof(*fc->decks));
     malloc_new_decks(fc, index);
   }
   if (index>fc->n_decks-1) {
