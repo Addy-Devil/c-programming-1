@@ -1,4 +1,4 @@
-Grading at Fri Sep  7 02:57:21 UTC 2018
+Grading at Fri Sep  7 02:59:04 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -39,522 +39,798 @@ Testing with input file with
  o Many hands
  o Many unknown/future cards per hand
 Valgrind reported errors:
-==459== Memcheck, a memory error detector
-==459== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==459== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==459== Command: ./tester i1 i2
-==459== Parent PID: 458
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4C31F9C: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400CFD: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x400D00: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x400B30: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x401854: card_from_letters (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x401863: card_from_letters (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x40187B: card_from_letters (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x40188A: card_from_letters (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x401899: card_from_letters (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4018A8: card_from_letters (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4018C1: card_from_letters (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4018C6: card_from_letters (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4018CB: card_from_letters (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x400B2A: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x5206ce8 is 0 bytes after a block of size 120 alloc'd
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
-==459==    by 0x400E52: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x400C9A: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x5206ce9 is 1 bytes after a block of size 120 alloc'd
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
-==459==    by 0x400E52: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x400CB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x5206ce8 is 0 bytes after a block of size 120 alloc'd
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
-==459==    by 0x400E52: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4ED9570: __strcmp_sse2_unaligned (strcmp-sse2-unaligned.S:24)
-==459==    by 0x400CFD: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x5206cea is 2 bytes after a block of size 120 alloc'd
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
-==459==    by 0x400E52: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4C30C0A: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4C30C17: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4C30C14: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5e2 is 0 bytes after a block of size 2 alloc'd
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid write of size 1
-==459==    at 0x4C30C30: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5e4 is 2 bytes after a block of size 2 alloc'd
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid write of size 1
-==459==    at 0x4C30C3F: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5f2 is 16 bytes after a block of size 2 alloc'd
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4C30C0A: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4C30C17: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4C30C14: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5e2 is 0 bytes after a block of size 2 alloc'd
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid write of size 1
-==459==    at 0x4C30C30: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5f2 is 16 bytes after a block of size 2 alloc'd
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid write of size 1
-==459==    at 0x4C30C3F: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5ff is 15 bytes after a block of size 16 in arena "client"
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x4E7545F: ____strtol_l_internal (strtol_l.c:293)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4E75485: ____strtol_l_internal (strtol_l.c:295)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4E7548E: ____strtol_l_internal (strtol_l.c:300)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4E7549F: ____strtol_l_internal (strtol_l.c:305)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4E754A8: ____strtol_l_internal (strtol_l.c:309)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4E755CC: ____strtol_l_internal (strtol_l.c:435)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4E7560E: ____strtol_l_internal (strtol_l.c:437)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4E756CA: ____strtol_l_internal (strtol_l.c:465)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4E756D5: ____strtol_l_internal (strtol_l.c:468)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4E7565F: ____strtol_l_internal (strtol_l.c:435)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x4E756B7: ____strtol_l_internal (strtol_l.c:461)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x4E757FF: ____strtol_l_internal (strtol_l.c:491)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Conditional jump or move depends on uninitialised value(s)
-==459==    at 0x401086: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x4013F7: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x4010BB: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x401403: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x4010BB: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x40140B: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x4010BB: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x40141B: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x4010BB: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x401430: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x4010BB: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x401437: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x4010BB: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x40143E: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x4010BB: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x40145F: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x4010BB: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Use of uninitialised value of size 8
-==459==    at 0x401466: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x4010BB: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x400B4C: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5ee is 12 bytes after a block of size 2 free'd
-==459==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Block was alloc'd at
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4E75454: ____strtol_l_internal (strtol_l.c:293)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400C4E: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5ed is 11 bytes after a block of size 2 free'd
-==459==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Block was alloc'd at
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4E75654: ____strtol_l_internal (strtol_l.c:433)
-==459==    by 0x4E70E8F: atoi (atoi.c:27)
-==459==    by 0x400C4E: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5ee is 12 bytes after a block of size 2 free'd
-==459==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Block was alloc'd at
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4C31FB4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400CFD: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5f2 is 16 bytes after a block of size 2 free'd
-==459==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Block was alloc'd at
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4ED9570: __strcmp_sse2_unaligned (strcmp-sse2-unaligned.S:24)
-==459==    by 0x400B7B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5f7 is 21 bytes after a block of size 2 free'd
-==459==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Block was alloc'd at
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4C30C19: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5f5 is 19 bytes after a block of size 2 free'd
-==459==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Block was alloc'd at
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4C30C33: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5f6 is 20 bytes after a block of size 2 free'd
-==459==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Block was alloc'd at
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4C30C19: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5f6 is 20 bytes after a block of size 2 free'd
-==459==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Block was alloc'd at
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== Invalid read of size 1
-==459==    at 0x4C30C33: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Address 0x530c5f7 is 21 bytes after a block of size 2 free'd
-==459==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459==  Block was alloc'd at
-==459==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
-==459==    by 0x401C9D: main (test-input.c:69)
-==459== 
-==459== 
-==459== HEAP SUMMARY:
-==459==     in use at exit: 392 bytes in 39 blocks
-==459==   total heap usage: 36,999 allocs, 36,960 frees, 976,371,420 bytes allocated
-==459== 
-==459== LEAK SUMMARY:
-==459==    definitely lost: 392 bytes in 39 blocks
-==459==    indirectly lost: 0 bytes in 0 blocks
-==459==      possibly lost: 0 bytes in 0 blocks
-==459==    still reachable: 0 bytes in 0 blocks
-==459==         suppressed: 0 bytes in 0 blocks
-==459== Rerun with --leak-check=full to see details of leaked memory
-==459== 
-==459== For counts of detected and suppressed errors, rerun with: -v
-==459== Use --track-origins=yes to see where uninitialised values come from
-==459== ERROR SUMMARY: 67895 errors from 57 contexts (suppressed: 0 from 0)
+==628== Memcheck, a memory error detector
+==628== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==628== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==628== Command: ./tester i1 i2
+==628== Parent PID: 627
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4C31F9C: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400CFD: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x400D00: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x400B30: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x40186E: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x40187D: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x401895: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4018A4: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4018B3: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4018C2: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4018DB: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4018E0: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4018E5: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x400B2A: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5206ec8 is 0 bytes after a block of size 120 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
+==628==    by 0x400E52: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x400C9A: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5206ec9 is 1 bytes after a block of size 120 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
+==628==    by 0x400E52: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x400CB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5206ec8 is 0 bytes after a block of size 120 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
+==628==    by 0x400E52: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4ED9570: __strcmp_sse2_unaligned (strcmp-sse2-unaligned.S:24)
+==628==    by 0x400CFD: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5206eca is 2 bytes after a block of size 120 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
+==628==    by 0x400E52: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x400B4C: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5212993 is 19 bytes after an unallocated block of size 0 in arena "client"
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4ED9570: __strcmp_sse2_unaligned (strcmp-sse2-unaligned.S:24)
+==628==    by 0x400B7B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5212993 is 19 bytes after an unallocated block of size 0 in arena "client"
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4C30C0A: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4C30C17: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4C30C14: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5310982 is 0 bytes after a block of size 2 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4C30C19: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5212991 is 17 bytes after an unallocated block of size 0 in arena "client"
+==628== 
+==628== Invalid write of size 1
+==628==    at 0x4C30C30: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5310984 is 2 bytes after a block of size 2 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4C30C33: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5212992 is 18 bytes after an unallocated block of size 0 in arena "client"
+==628== 
+==628== Invalid write of size 1
+==628==    at 0x4C30C3F: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BB3: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5310987 is 5 bytes after a block of size 2 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4C30C0A: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4C30C17: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4C30C14: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5310982 is 0 bytes after a block of size 2 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4C30C19: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5212992 is 18 bytes after an unallocated block of size 0 in arena "client"
+==628== 
+==628== Invalid write of size 1
+==628==    at 0x4C30C30: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5310987 is 5 bytes after a block of size 2 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4C30C33: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5212993 is 19 bytes after an unallocated block of size 0 in arena "client"
+==628== 
+==628== Invalid write of size 1
+==628==    at 0x4C30C3F: strcat (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400BDC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x5310989 is 7 bytes after a block of size 2 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x4E7545F: ____strtol_l_internal (strtol_l.c:293)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E75485: ____strtol_l_internal (strtol_l.c:295)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E7548E: ____strtol_l_internal (strtol_l.c:300)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E7549F: ____strtol_l_internal (strtol_l.c:305)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E754A8: ____strtol_l_internal (strtol_l.c:309)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E755CC: ____strtol_l_internal (strtol_l.c:435)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E7560E: ____strtol_l_internal (strtol_l.c:437)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E756CA: ____strtol_l_internal (strtol_l.c:465)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E756D5: ____strtol_l_internal (strtol_l.c:468)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E7565F: ____strtol_l_internal (strtol_l.c:435)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x4E756B7: ____strtol_l_internal (strtol_l.c:461)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E757FF: ____strtol_l_internal (strtol_l.c:491)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4010A0: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x401411: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x4010D5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x40141D: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x4010D5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x401425: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x4010D5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x401435: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x4010D5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x40144A: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x4010D5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x401451: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x4010D5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x401458: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x4010D5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x401479: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x4010D5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x401480: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x4010D5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400C1F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Use of uninitialised value of size 8
+==628==    at 0x4E75479: ____strtol_l_internal (strtol_l.c:293)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400BEC: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x401883: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400CC1: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4E75454: ____strtol_l_internal (strtol_l.c:293)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400C4E: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x53bbafd is 11 bytes after a block of size 2 free'd
+==628==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Block was alloc'd at
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4E75654: ____strtol_l_internal (strtol_l.c:433)
+==628==    by 0x4E70E8F: atoi (atoi.c:27)
+==628==    by 0x400C4E: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x53bbafe is 12 bytes after a block of size 2 free'd
+==628==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Block was alloc'd at
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Invalid read of size 1
+==628==    at 0x4C31FB4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400CFD: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Address 0x53bbb02 is 16 bytes after a block of size 2 free'd
+==628==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400C2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628==  Block was alloc'd at
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x400B8D: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x400E04: read_input (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401CB7: main (test-input.c:69)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x40176E: value_letter (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x40183D: print_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401222: print_hand (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401DD2: main (test-input.c:84)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x401776: value_letter (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x40183D: print_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401222: print_hand (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401DD2: main (test-input.c:84)
+==628== 
+==628== Syscall param write(buf) points to uninitialised byte(s)
+==628==    at 0x4F31290: __write_nocancel (syscall-template.S:84)
+==628==    by 0x4EB2BFE: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1263)
+==628==    by 0x4EB4408: new_do_write (fileops.c:518)
+==628==    by 0x4EB4408: _IO_do_write@@GLIBC_2.2.5 (fileops.c:494)
+==628==    by 0x4EB491A: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:854)
+==628==    by 0x4EAB387: putchar (putchar.c:28)
+==628==    by 0x40122C: print_hand (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401DD2: main (test-input.c:84)
+==628==  Address 0x5fe2624 is 3,236 bytes inside a block of size 4,096 alloc'd
+==628==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==628==    by 0x4EA71D4: _IO_file_doallocate (filedoalloc.c:127)
+==628==    by 0x4EB5593: _IO_doallocbuf (genops.c:398)
+==628==    by 0x4EB48F7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:820)
+==628==    by 0x4EB328C: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1331)
+==628==    by 0x4E87240: vfprintf (vfprintf.c:1320)
+==628==    by 0x4E8F898: printf (printf.c:33)
+==628==    by 0x401D6C: main (test-input.c:80)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x401B82: my_card_ptr_comp (test-input.c:47)
+==628==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x401B82: my_card_ptr_comp (test-input.c:47)
+==628==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x401B82: my_card_ptr_comp (test-input.c:47)
+==628==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x401B82: my_card_ptr_comp (test-input.c:47)
+==628==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x401B82: my_card_ptr_comp (test-input.c:47)
+==628==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x401B82: my_card_ptr_comp (test-input.c:47)
+==628==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x40176E: value_letter (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x40183D: print_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401222: print_hand (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401E1D: main (test-input.c:87)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x401776: value_letter (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x40183D: print_card (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401222: print_hand (in /graderhome/work/c4prj2_input/tester)
+==628==    by 0x401E1D: main (test-input.c:87)
+==628== 
+==628== Conditional jump or move depends on uninitialised value(s)
+==628==    at 0x4E73234: msort_with_tmp.part.0 (msort.c:83)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E72EC6: msort_with_tmp (msort.c:45)
+==628==    by 0x4E72EC6: msort_with_tmp.part.0 (msort.c:53)
+==628==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==628==    by 0x4E7369E: qsort_r (msort.c:297)
+==628==    by 0x401BD6: my_sort_deck (test-input.c:53)
+==628==    by 0x401DF0: main (test-input.c:85)
+==628== 
+==628== 
+==628== HEAP SUMMARY:
+==628==     in use at exit: 488 bytes in 51 blocks
+==628==   total heap usage: 55,223 allocs, 55,172 frees, 2,656,942,872 bytes allocated
+==628== 
+==628== LEAK SUMMARY:
+==628==    definitely lost: 488 bytes in 51 blocks
+==628==    indirectly lost: 0 bytes in 0 blocks
+==628==      possibly lost: 0 bytes in 0 blocks
+==628==    still reachable: 0 bytes in 0 blocks
+==628==         suppressed: 0 bytes in 0 blocks
+==628== Rerun with --leak-check=full to see details of leaked memory
+==628== 
+==628== For counts of detected and suppressed errors, rerun with: -v
+==628== Use --track-origins=yes to see where uninitialised values come from
+==628== ERROR SUMMARY: 100885 errors from 80 contexts (suppressed: 0 from 0)
 
 Overall Grade: C
