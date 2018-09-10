@@ -6,9 +6,10 @@
 
 int main(int argc, char ** argv) {
   future_cards_t fc;
+  fc.decks = malloc(sizeof(*fc.decks));
   fc.n_decks = 0;
   deck_t * deck = malloc(sizeof(*deck));
-  deck->cards = malloc(sizeof(*deck->cards));
+  deck->cards = NULL;//malloc(sizeof(*deck->cards));
   deck->n_cards = 0;
   
   card_t * ptr = add_empty_card(deck);
@@ -26,7 +27,7 @@ int main(int argc, char ** argv) {
     free_deck(&fc.decks[i]);
   }
 
-  //free(fc.decks);
+  free(fc.decks);
   
   exit(EXIT_SUCCESS);
 }

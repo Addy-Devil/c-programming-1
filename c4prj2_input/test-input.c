@@ -20,11 +20,14 @@ int main(int argc, char ** argv) {
   }
 
   size_t n_hands = 0;
-  future_cards_t * fc = malloc(sizeof(*fc));
-  fc->decks = malloc(sizeof(*fc->decks));
-  fc->n_decks = 0;
-
-  deck_t ** deck_ts = read_input(f, &n_hands, fc);
+  future_cards_t fc;
+  fc.decks = malloc(sizeof(*fc.decks));
+  fc.n_decks = 0;
+  fc.decks[0].cards = malloc(sizeof(*fc.decks[0].cards));
+  fc.decks[0].n_cards = 0;
+  fc.decks[0].cards[0] = malloc(sizeof(*fc.decks[0].cards[0]));
+  
+  deck_t ** deck_ts = read_input(f, &n_hands, &fc);
 
   printf("n_hands: %zu\n", n_hands);
   
@@ -38,7 +41,9 @@ int main(int argc, char ** argv) {
     free_deck(deck_ts[i]);
   }
 
-  free(fc);
-  
+  for (int i=0; i<fc.n_decks; i++) {
+    free_deck(&fc.decks[i]);
+  }
+
   exit(EXIT_SUCCESS);
 }

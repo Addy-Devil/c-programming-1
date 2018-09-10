@@ -8,31 +8,21 @@ void malloc_new_decks(future_cards_t * fc, size_t index) {
   fc->decks = realloc(fc->decks, (index+1) * sizeof(*fc->decks));
   for(size_t i=fc->n_decks; i<=index; i++) {
     deck_t * deck = malloc(sizeof(*deck));
-    deck->cards = malloc(sizeof(*deck->cards));
-    deck->cards[0] = malloc(sizeof(*deck->cards[0]));
+    deck->cards = NULL;//malloc(sizeof(*deck->cards));
     deck->n_cards = 0;
     fc->decks[i] = *deck;
   }
   fc->n_decks = index+1;
 }
 
-void malloc_new_card(future_cards_t * fc, size_t index) {
-  fc->decks[index].n_cards++;
-  fc->decks[index].cards = realloc(fc->decks[index].cards, fc->decks[index].n_cards * sizeof(*fc->decks[index].cards));
-  fc->decks[index].cards[fc->decks[index].n_cards-1] = malloc(sizeof(*fc->decks[index].cards[0]));
-}
-
 void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
 
   if (fc->n_decks==0) {
-    fc->decks = malloc(sizeof(*fc->decks));
+    //fc->decks = malloc(sizeof(*fc->decks));
     malloc_new_decks(fc, index);
   }
   else if (index>fc->n_decks-1) {
     malloc_new_decks(fc, index);
-  }
-  else {
-    malloc_new_card(fc, index);
   }
   
   add_card_to(&(fc->decks[index]), *ptr);
