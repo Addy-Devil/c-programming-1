@@ -18,7 +18,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   
   while(1) {
     if (*(str+i) == chQuestion) {
-      if(*((str+i)+2) != ' ' && strcmp((str+i)+2, chNewline) != 0) {
+      if(isdigit(*(str+i+2))) {
 	size_t index;
 	char * chN = malloc(2*sizeof(*chN));
 	chN = strcat(chN, str+i);
