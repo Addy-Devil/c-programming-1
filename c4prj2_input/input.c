@@ -20,14 +20,14 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     if (*(str+i) == chQuestion) {
       if(isdigit(*(str+i+2))) {
 	size_t index;
-	char * chN = malloc(2*sizeof(*chN));
+	char * chN = "";
 	chN = strcat(chN, str+i+1);
 	chN = strcat(chN, str+i+2);
 	int n = atoi(chN);
 	index = (size_t)n;
 	card_t * ptr = add_empty_card(deck);
 	add_future_card(fc, index, ptr);
-	free(chN);
+	//free(chN);
 	i+=3;
       }
       else {
