@@ -9,50 +9,73 @@
 deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   deck_t * deck = malloc(sizeof(*deck));
   deck->cards = malloc(sizeof(*deck->cards));
+  deck->cards[0] = malloc(sizeof(*deck->cards[0]));
   deck->n_cards = 0;
   int i = 0;
   char * chNewline = "\n";
   char chQuestion = '?';
 
- 
+  /*
+  while (1) {
+    if (isalnum(*(str+i))) {
+      card_t c = card_from_letters(*str, *(str+1));
+      add_card_to(deck, c);
+      i+=2;
+    }
+    else if (*(str+i) == chQuestion) {
+      
+    }
+    else if (isblank(*(str+i))) {
+      i++;
+    }
+    else {
+      break;
+    }
+  }
+  */
+  
   while(1) {
-    if (*(str+i*3) == chQuestion) {
-      if(*((str+i*3)+2) != ' ' && strcmp((str+i*3)+2, chNewline) != 0) {
+    if (*(str+i) == chQuestion) {
+      if(*((str+i)+2) != ' ' && strcmp((str+i)+2, chNewline) != 0) {
 	size_t index;
 	char * chN = malloc(2*sizeof(*chN));
-	chN = strcat(chN, str+i*3);
-	chN = strcat(chN, (str+i*3)+1);
+	chN = strcat(chN, str+i);
+	chN = strcat(chN, (str+i)+1);
 	int n = atoi(chN);
 	index = (size_t)n;
 	card_t * ptr = add_empty_card(deck);
 	add_future_card(fc, index, ptr);
 	free(chN);
+	i+=3;
       }
       else {
 	size_t index;
-	int n = atoi((str+i*3)+1);
+	int n = atoi((str+i)+1);
 	index = (size_t)n;
 	card_t * ptr = add_empty_card(deck);
 	add_future_card(fc, index, ptr);
+	i+=2;
       }
     }
-    else {
+    else if (isalnum(*(str+i))) {
       //printf("value: %c suit: %c\n", *(str+i*3), *((str+i*3)+1));
-      card_t c = card_from_letters(*(str+i*3), *((str+i*3)+1));
+      card_t c = card_from_letters(*(str+i), *((str+i)+1));
       add_card_to(deck, c);
-    }
-    //break if the card is the last in the hand
-    if (strcmp((str+i*3)+2, chNewline)==0) {
+      i+=2;
+    } else if (strcmp(str+i, chNewline)==0) {
       //printf("breaking while loop\n");
       break;
     }
-    i++;
+    else {
+      i++;
+    }
   }
   
   if (deck->n_cards < 5) {
     fprintf(stderr, "Hand contined less than 5 cards:\nLine: %s\n", str);
     return NULL;
   }
+  
   
   return deck;
 }
