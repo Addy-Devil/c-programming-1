@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "cards.h"
 #include "deck.h"
 #include "future.h"
@@ -14,25 +15,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   int i = 0;
   char * chNewline = "\n";
   char chQuestion = '?';
-
-  /*
-  while (1) {
-    if (isalnum(*(str+i))) {
-      card_t c = card_from_letters(*str, *(str+1));
-      add_card_to(deck, c);
-      i+=2;
-    }
-    else if (*(str+i) == chQuestion) {
-      
-    }
-    else if (isblank(*(str+i))) {
-      i++;
-    }
-    else {
-      break;
-    }
-  }
-  */
   
   while(1) {
     if (*(str+i) == chQuestion) {
