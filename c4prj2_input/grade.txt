@@ -1,11 +1,11 @@
-Grading at Mon Sep 10 22:02:39 UTC 2018
+Grading at Mon Sep 10 22:03:01 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
 future.c: In function ‘future_cards_from_deck’:
-future.c:49:30: error: incompatible types when assigning to type ‘card_t {aka struct card_tag}’ from type ‘suit_t {aka enum <anonymous>}’
-       *fc->decks[i].cards[j] = deck->cards[i]->suit;
+future.c:49:30: error: incompatible types when assigning to type ‘card_t {aka struct card_tag}’ from type ‘card_t * {aka struct card_tag *}’
+       *fc->decks[i].cards[j] = deck->cards[i];
                               ^
 Compilation of future.c failed
 
