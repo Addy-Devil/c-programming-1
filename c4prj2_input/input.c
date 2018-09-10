@@ -21,8 +21,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       if(isdigit(*(str+i+2))) {
 	size_t index;
 	char * chN = malloc(2*sizeof(*chN));
-	chN = strcat(chN, str+i);
-	chN = strcat(chN, (str+i)+1);
+	chN = strcat(chN, str+i+1);
+	chN = strcat(chN, str+i+2);
 	int n = atoi(chN);
 	index = (size_t)n;
 	card_t * ptr = add_empty_card(deck);
@@ -32,7 +32,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       }
       else {
 	size_t index;
-	int n = atoi((str+i)+1);
+	int n = atoi(str+i+1);
 	index = (size_t)n;
 	card_t * ptr = add_empty_card(deck);
 	add_future_card(fc, index, ptr);
@@ -41,10 +41,11 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     }
     else if (isalnum(*(str+i))) {
       //printf("value: %c suit: %c\n", *(str+i*3), *((str+i*3)+1));
-      card_t c = card_from_letters(*(str+i), *((str+i)+1));
+      card_t c = card_from_letters(*(str+i), *(str+i+1));
       add_card_to(deck, c);
       i+=2;
-    } else if (strcmp(str+i, chNewline)==0) {
+    }
+    else if (strcmp(str+i, chNewline)==0) {
       //printf("breaking while loop\n");
       break;
     }
