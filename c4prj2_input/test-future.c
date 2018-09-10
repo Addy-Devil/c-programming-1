@@ -21,12 +21,12 @@ int main(int argc, char ** argv) {
   }
 
   free_deck(deck);
-
   
   for (int i=0; i<fc.n_decks; i++) {
-    //free(&fc->decks[i].cards);
     free_deck(&fc.decks[i]);
   }
+
+  //free(fc.decks);
   
   exit(EXIT_SUCCESS);
 }
