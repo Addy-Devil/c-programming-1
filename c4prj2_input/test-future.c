@@ -6,7 +6,7 @@
 
 int main(int argc, char ** argv) {
   future_cards_t fc;
-  fc.decks = malloc(sizeof(*fc.decks));
+  fc.decks = malloc(sizeof(fc.decks));
   fc.n_decks = 0;
   deck_t * deck = malloc(sizeof(*deck));
   deck->cards = NULL;//malloc(sizeof(*deck->cards));

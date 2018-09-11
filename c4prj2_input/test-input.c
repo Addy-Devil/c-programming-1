@@ -23,9 +23,6 @@ int main(int argc, char ** argv) {
   future_cards_t fc;
   fc.decks = malloc(sizeof(*fc.decks));
   fc.n_decks = 0;
-  fc.decks[0].cards = malloc(sizeof(*fc.decks[0].cards));
-  fc.decks[0].n_cards = 0;
-  fc.decks[0].cards[0] = malloc(sizeof(*fc.decks[0].cards[0]));
   
   deck_t ** deck_ts = read_input(f, &n_hands, &fc);
 
