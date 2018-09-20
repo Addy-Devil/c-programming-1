@@ -4,6 +4,7 @@
 #include "deck.h"
 #include "future.h"
 
+/*
 void malloc_new_decks(future_cards_t * fc, size_t index) {
   fc->decks = realloc(fc->decks, (index+1) * sizeof(*fc->decks));
   for(size_t i=fc->n_decks; i<=index; i++) {
@@ -14,9 +15,17 @@ void malloc_new_decks(future_cards_t * fc, size_t index) {
   }
   fc->n_decks = index+1;
 }
+*/
 
 void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
 
+  if (fc->n_decks < index-1) {
+    fc->decks = realloc(fc->decks, (index+1) * sizeof(*fc->decks));
+  }
+
+  add_card_to(&fc->decks[index], *ptr);
+  
+  /*
   if (fc->n_decks==0) {
     //fc->decks = malloc(sizeof(*fc->decks));
     malloc_new_decks(fc, index);
@@ -26,6 +35,7 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
   }
   
   add_card_to(&(fc->decks[index]), *ptr);
+  */
 }
 
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
