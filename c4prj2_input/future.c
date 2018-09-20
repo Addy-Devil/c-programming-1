@@ -19,11 +19,11 @@ void malloc_new_decks(future_cards_t * fc, size_t index) {
 
 void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
 
-  if (fc->n_decks < index-1) {
+  if (fc->n_decks <= index) {
     fc->decks = realloc(fc->decks, (index+1) * sizeof(*fc->decks));
   }
 
-  add_card_to(&fc->decks[index], *ptr);
+  add_card_to(&(fc->decks[index]), *ptr);
   
   /*
   if (fc->n_decks==0) {
