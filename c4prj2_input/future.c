@@ -20,9 +20,9 @@ void malloc_new_decks(future_cards_t * fc, size_t index) {
 void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
 
   if (fc->n_decks == 0) {
-    fc.decks->cards = NULL;
-    fc.decks->n_cards = 0;
-    fc.n_decks = 1;
+    fc->decks->cards = NULL;
+    fc->decks->n_cards = 0;
+    fc->n_decks = 1;
   }
   
   if (fc->n_decks <= index) {
