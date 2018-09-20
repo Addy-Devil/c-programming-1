@@ -6,10 +6,10 @@
 
 int main(int argc, char ** argv) {
   future_cards_t fc;
-  fc.decks = malloc(sizeof(fc.decks));
-  fc.n_decks = 1;
-  fc.decks[0].n_cards = 0;
-  fc.decks[0].cards = NULL;
+  fc.n_decks = 0;
+  fc.decks = malloc(sizeof(*fc.decks));
+  fc.decks->cards = NULL;
+  fc.decks->n_cards = 0;
   deck_t * deck = malloc(sizeof(*deck));
   deck->cards = NULL;//malloc(sizeof(*deck->cards));
   deck->n_cards = 0;
@@ -28,8 +28,6 @@ int main(int argc, char ** argv) {
   for (int i=0; i<fc.n_decks; i++) {
     free_deck(&fc.decks[i]);
   }
-
-  free(fc.decks);
   
   exit(EXIT_SUCCESS);
 }
