@@ -18,6 +18,20 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   while(1) {
     // if we come upon a future card (i.e., a `?n` card)
     if (*(str+i) == chQuestion) {
+      size_t index;
+      char * chN = "";
+      int j = 1;
+      while (isdigit(*(str+i+j))) {
+	chN = strcat(chN, str+i+j);
+	j++;
+      }
+      int n = atoi(chN);
+      index = (size_t)n;
+      card_t * ptr = add_empty_card(deck);
+      add_future_card(fc, index, ptr);
+      i+=j;
+
+      /*
       // check for double digit ?n, (e.g., ?10 or ?99)
       if(isdigit(*(str+i+2))) {
 	size_t index;
@@ -39,6 +53,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	add_future_card(fc, index, ptr);
 	i+=2;
       }
+      */
     }
     // else check if we come upon a known card (e.g., As or 3c)
     else if (isalnum(*(str+i))) {
@@ -67,8 +82,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 }
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
-  deck_t ** deck_ts = malloc(sizeof(**deck_ts));
-  
+  //deck_t ** deck_ts = malloc(sizeof(**deck_ts));
+  deck_t ** deck_ts = NULL;
+
   char * line = NULL;
   size_t sz = 0;
   int i = 0;

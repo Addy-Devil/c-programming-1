@@ -32,11 +32,11 @@ int main(int argc, char ** argv) {
     print_hand(deck_ts[i]);
   }
 
-  
-
   for (int i=0; i<n_hands; i++) {
     free_deck(deck_ts[i]);
   }
+
+  free(deck_ts);
 
   for (int i=0; i<fc.n_decks; i++) {
     free_deck(&fc.decks[i]);
