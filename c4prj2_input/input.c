@@ -19,12 +19,18 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     // if we come upon a future card (i.e., a `?n` card)
     if (*(str+i) == chQuestion) {
       size_t index;
-      char * chN = "";
+      //char chN[] = "";
       int j = 1;
+      //count number of digits of n in ?n
       while (isdigit(*(str+i+j))) {
-	chN = strcat(chN, str+i+j);
 	j++;
       }
+      //create string of length with same number of digits as  n from ?n
+      char chN[j];
+      for (int k=0; k<j-1; k++) {
+	chN[k] = *(str+i+k);
+      }
+      chN[j-1] = '\0';
       int n = atoi(chN);
       index = (size_t)n;
       card_t * ptr = add_empty_card(deck);
