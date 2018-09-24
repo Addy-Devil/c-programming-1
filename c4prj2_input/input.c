@@ -30,7 +30,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	chN[k] = *(str+i+k);
       }
       chN[j-1] = '\0';
-      int n = atoi(chN);
+      char * p = &chN[0];
+      int n = atoi(p);
       index = (size_t)n;
       card_t * ptr = add_empty_card(deck);
       add_future_card(fc, index, ptr);
