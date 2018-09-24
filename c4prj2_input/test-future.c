@@ -16,44 +16,50 @@ int main(int argc, char ** argv) {
 
   //create "shuffled" deck to change fc cards to
   deck_t * shuffled = malloc(sizeof(*shuffled));
-  card_t c = card_from_num(0);
-  add_card_to(shuffled, c);
-
-  //create empty card pointer in deck
-  card_t * ptr = add_empty_card(deck);
-
-  //add the future card to fc
-  size_t index = 0;
-  add_future_card(&fc, index, ptr);
-
+  shuffled->cards = NULL;
+  shuffled->n_cards = 0;
+  for (unsigned i=0; i<2; i++) {
+    card_t c = card_from_num(i);
+    add_card_to(shuffled, c);
+  }
+  
+  // add empty pointers to fc
+  for (size_t i=3; i<5; i++) {
+    //create empty card pointer in deck
+    card_t * ptr = add_empty_card(deck);
+    
+    //add the future card to fc
+    add_future_card(&fc, i, ptr);
+  }
+  
   // display the future cards
+  printf("Show unknown future cards\n");
   for (int i=0; i<fc.n_decks; i++) {
-    printf("Show unknown future cards\n");
     print_hand(&fc.decks[i]);
   }
 
   // display cards in shuffled
-  for (int i=0; i<shuffled->n_cards; i++) {
-    printf("Show cards from shuffled deck\n");
-    print_hand(shuffled);
-  }
+  printf("\nShow cards from shuffled deck\n");
+  print_hand(shuffled);
 
   //change cards in fc to cards from shuffled
   future_cards_from_deck(shuffled, &fc);
 
   //display known cards from fc
+  printf("\nShow known future cards\n");
   for (int i=0; i<fc.n_decks; i++) {
-    printf("Show known future cards\n");
     print_hand(&fc.decks[i]);
   }
+  printf("\n");
   
   //free allocated memory
   free_deck(deck);
-  free_deck(shuffled);
-  
+  /*
   for (int i=0; i<fc.n_decks; i++) {
     free_deck(&fc.decks[i]);
   }
+  */
+  free_deck(shuffled);
   
   exit(EXIT_SUCCESS);
 }
