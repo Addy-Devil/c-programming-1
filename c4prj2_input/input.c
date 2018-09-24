@@ -19,7 +19,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     // if we come upon a future card (i.e., a `?n` card)
     if (*(str+i) == chQuestion) {
       size_t index;
-      //char chN[] = "";
       int j = 1;
       //count number of digits of n in ?n
       while (isdigit(*(str+i+j))) {

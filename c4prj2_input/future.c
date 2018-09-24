@@ -9,10 +9,8 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
   if (fc->n_decks <= index) {
     fc->decks = realloc(fc->decks, (index+1) * sizeof(*fc->decks));
     for (size_t i=fc->n_decks; i<=index; i++) {
-      if (fc->decks[i].n_cards < 1) {
-	fc->decks[i].cards = NULL;
-	fc->decks[i].n_cards = 0;
-      }
+      fc->decks[i].cards = NULL;
+      fc->decks[i].n_cards = 0;
     }
     fc->n_decks = index+1;
   }
@@ -22,15 +20,15 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
 
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
   if (deck->n_cards == 0) {
-    fprintf(stderr, "future_cards_from_deck: n_cards == 0\n");
+    fprintf(stderr, "future_cards_from_deck: shuffled_deck->n_cards == 0\n");
     return;
   }
   if (fc->n_decks == 0) {
-    fprintf(stderr, "future_cards_from_deck: n_decks == 0\n");
+    fprintf(stderr, "future_cards_from_deck: fc->n_decks == 0\n");
     return;
   }
   if (fc->n_decks != deck->n_cards) {
-    fprintf(stderr, "future_cards_from_deck: n_decks != n_cards\n");
+    fprintf(stderr, "future_cards_from_deck: fc->n_decks != shuffled_deck->n_cards\n");
     return;
   }
   
