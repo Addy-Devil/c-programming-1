@@ -13,17 +13,43 @@ int main(int argc, char ** argv) {
   deck_t * deck = malloc(sizeof(*deck));
   deck->cards = NULL;//malloc(sizeof(*deck->cards));
   deck->n_cards = 0;
-  
+
+  //create "shuffled" deck to change fc cards to
+  deck_t * shuffled = malloc(sizeof(*shuffled));
+  card_t c = card_from_num(0);
+  add_card_to(shuffled, c);
+
+  //create empty card pointer in deck
   card_t * ptr = add_empty_card(deck);
 
+  //add the future card to fc
   size_t index = 0;
   add_future_card(&fc, index, ptr);
 
+  // display the future cards
   for (int i=0; i<fc.n_decks; i++) {
+    printf("Show unknown future cards\n");
     print_hand(&fc.decks[i]);
   }
 
+  // display cards in shuffled
+  for (int i=0; i<shuffled->n_cards; i++) {
+    printf("Show cards from shuffled deck\n");
+    print_hand(shuffled);
+  }
+
+  //change cards in fc to cards from shuffled
+  future_cards_from_deck(shuffled, &fc);
+
+  //display known cards from fc
+  for (int i=0; i<fc.n_decks; i++) {
+    printf("Show known future cards\n");
+    print_hand(&fc.decks[i]);
+  }
+  
+  //free allocated memory
   free_deck(deck);
+  free_deck(shuffled);
   
   for (int i=0; i<fc.n_decks; i++) {
     free_deck(&fc.decks[i]);
