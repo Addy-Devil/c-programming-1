@@ -27,7 +27,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       //create string of length with same number of digits as  n from ?n
       char chN[j];
       for (int k=0; k<j; k++) {
-	chN[k] = *(str+i+k);
+	chN[k] = *(str+i+k+1);
       }
       int n = atoi(chN);
       index = (size_t)n;
