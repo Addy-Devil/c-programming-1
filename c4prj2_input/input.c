@@ -26,11 +26,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       }
       //create string of length with same number of digits as  n from ?n
       char chN[j];
-      for (int k=0; k<j-1; k++) {
+      for (int k=0; k<j; k++) {
 	chN[k] = *(str+i+k);
       }
-      chN[j-1] = '\0';
-      char * p = &chN[0];
       int n = atoi(p);
       index = (size_t)n;
       card_t * ptr = add_empty_card(deck);
