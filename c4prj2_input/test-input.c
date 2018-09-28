@@ -32,8 +32,8 @@ int main(int argc, char ** argv) {
   printf("Hand with unknown cards\n");
   for (int i=0; i<n_hands; i++) {
     print_hand(deck_ts[i]);
+    printf("\n");
   }
-  printf("\n");
 
   // create a shuffled deck to update the unknown card
   deck_t * shuffled = malloc(sizeof(*shuffled));

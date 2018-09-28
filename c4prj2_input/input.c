@@ -35,30 +35,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       card_t * ptr = add_empty_card(deck);
       add_future_card(fc, index, ptr);
       i+=j;
-
-      /*
-      // check for double digit ?n, (e.g., ?10 or ?99)
-      if(isdigit(*(str+i+2))) {
-	size_t index;
-	char * chN = "";
-	chN = strcat(chN, str+i+1);
-	chN = strcat(chN, str+i+2);
-	int n = atoi(chN);
-	index = (size_t)n;
-	card_t * ptr = add_empty_card(deck);
-	add_future_card(fc, index, ptr);
-	i+=3;
-      }
-      // otherwise its a single digit ?n (e.g., ?0 or ?9)
-      else {
-	size_t index;
-	int n = atoi(str+i+1);
-	index = (size_t)n;
-	card_t * ptr = add_empty_card(deck);
-	add_future_card(fc, index, ptr);
-	i+=2;
-      }
-      */
     }
     // else check if we come upon a known card (e.g., As or 3c)
     else if (isalnum(*(str+i))) {
