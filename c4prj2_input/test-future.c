@@ -11,7 +11,7 @@ int main(int argc, char ** argv) {
   fc.decks->cards = NULL;
   fc.decks->n_cards = 0;
   deck_t * deck = malloc(sizeof(*deck));
-  deck->cards = NULL;//malloc(sizeof(*deck->cards));
+  deck->cards = NULL;
   deck->n_cards = 0;
 
   //create "shuffled" deck to change fc cards to
@@ -24,7 +24,7 @@ int main(int argc, char ** argv) {
   }
   
   // add empty pointers to fc
-  for (size_t i=3; i<5; i++) {
+  for (size_t i=0; i<2; i++) {
     //create empty card pointer in deck
     card_t * ptr = add_empty_card(deck);
     
