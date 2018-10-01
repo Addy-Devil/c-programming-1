@@ -62,10 +62,11 @@ int main(int argc, char ** argv) {
   }
 
   free(deck_ts);
-
+  /*
   for (int i=0; i<fc.n_decks; i++) {
     free_deck(&fc.decks[i]);
   }
+  */
 
   exit(EXIT_SUCCESS);
 }
