@@ -35,7 +35,7 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
     }
   }
   
-  if (num_cards != deck->n_cards) {
+  if (num_cards > deck->n_cards) {
     fprintf(stderr, "future_cards_from_deck: fc->n_decks != shuffled_deck->n_cards\n");
     return;
   }
