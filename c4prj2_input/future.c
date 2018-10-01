@@ -39,11 +39,14 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
     fprintf(stderr, "future_cards_from_deck: fc->n_decks != shuffled_deck->n_cards\n");
     return;
   }
+
+  size_t k = 0;
   
   for (size_t i=0; i<deck->n_cards; i++) {
     for (size_t j=0; j<fc->decks[i].n_cards; j++) {
       if (fc->decks[i].n_cards > 0) {
-	*fc->decks[i].cards[j] = *deck->cards[i];
+	*fc->decks[i].cards[j] = *deck->cards[k];
+	k++;
       }
     }
   }
