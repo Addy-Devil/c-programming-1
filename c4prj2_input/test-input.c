@@ -52,8 +52,8 @@ int main(int argc, char ** argv) {
 
   //display fc with known card
   printf("Hand with known cards\n");
-  for (int i=0; i<n_hands; i++) {
-    print_hand(deck_ts[i]);
+  for (int i=0; i<fc.n_decks; i++) {
+    print_hand(&fc.decks[i]);
   }
   printf("\n");
 
