@@ -1,74 +1,12 @@
-Grading at Tue Oct  2 02:47:58 UTC 2018
+Grading at Tue Oct  2 02:49:14 UTC 2018
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
-Linking input.o, future.o deck.o, cards.o, and our tester
-Testing with input file with 
- o 1 hand
- o No unknown/future cards
-Your file matched the expected output
-Test case passed
-Testing with input file with 
- o Many hands
- o No unknown/future cards
-Your file matched the expected output
-Test case passed
-Testing with input file with 
- o Many hands
- o 1 unknown/future cards per hand
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_7_did_not_match
-Line_8_did_not_match
-Line_9_did_not_match
-Line_10_did_not_match
-Line_12_did_not_match
-Line_13_did_not_match
-Line_14_did_not_match
-Line_15_did_not_match
-Line_17_did_not_match
-Line_18_did_not_match
-Line_19_did_not_match
-Line_20_did_not_match
-Your file did not match the expected ouput
-Test case failed
-Testing with input file with 
- o Many hands
- o Many unknown/future cards per hand
-Valgrind reported errors:
-==3380== Memcheck, a memory error detector
-==3380== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==3380== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==3380== Command: ./tester i1 i2
-==3380== Parent PID: 3379
-==3380== 
-==3380== Invalid read of size 8
-==3380==    at 0x401088: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==3380==    by 0x401C7D: main (test-input.c:81)
-==3380==  Address 0x520b1a0 is 0 bytes after a block of size 96 alloc'd
-==3380==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==3380==    by 0x40132E: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==3380==    by 0x401930: simple_hand_from_string (test-input.c:16)
-==3380==    by 0x40199A: simple_read_input (test-input.c:32)
-==3380==    by 0x401C25: main (test-input.c:77)
-==3380== 
-==3380== 
-==3380== HEAP SUMMARY:
-==3380==     in use at exit: 232 bytes in 29 blocks
-==3380==   total heap usage: 335 allocs, 306 frees, 23,008 bytes allocated
-==3380== 
-==3380== LEAK SUMMARY:
-==3380==    definitely lost: 232 bytes in 29 blocks
-==3380==    indirectly lost: 0 bytes in 0 blocks
-==3380==      possibly lost: 0 bytes in 0 blocks
-==3380==    still reachable: 0 bytes in 0 blocks
-==3380==         suppressed: 0 bytes in 0 blocks
-==3380== Rerun with --leak-check=full to see details of leaked memory
-==3380== 
-==3380== For counts of detected and suppressed errors, rerun with: -v
-==3380== ERROR SUMMARY: 96 errors from 1 contexts (suppressed: 0 from 0)
+future.c: In function ‘future_cards_from_deck’:
+future.c:29:10: error: request for member ‘decks’ in something not a structure or union
+   if (!fc.decks) {
+          ^
+Compilation of future.c failed
 
-Overall Grade: C
+Overall Grade: F
