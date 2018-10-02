@@ -23,6 +23,9 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
   if (fc == NULL || fc->decks == NULL) {
     return;
   }
+  if (!fc) {
+    return;
+  }
   if (deck == NULL) {
     return;
   }
