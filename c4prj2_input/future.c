@@ -28,20 +28,19 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
     return;
   }
 
-  size_t num_cards = 0;
+  size_t num_future_cards = 0;
   for (size_t i=0; i<fc->n_decks; i++) {
     if (fc->decks[i].n_cards > 0) {
-      num_cards++;
+      num_future_cards++;
     }
   }
   
-  if (num_cards > deck->n_cards) {
-    fprintf(stderr, "future_cards_from_deck: fc->n_decks != shuffled_deck->n_cards\n");
+  if (num_future_cards > deck->n_cards) {
+    fprintf(stderr, "future_cards_from_deck: num_future_cards > shuffled_deck->n_cards\n");
     return;
   }
 
   size_t k = 0;
-  
   for (size_t i=0; i<fc->n_decks; i++) {
     for (size_t j=0; j<fc->decks[i].n_cards; j++) {
       if (fc->decks[i].n_cards > 0) {
