@@ -52,8 +52,8 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
       for (size_t j=0; j<fc->decks[i].n_cards; j++) {
 	*fc->decks[i].cards[j] = *c;
       }
+      free(c);
     }
-    free(c);
     k++;
   }
 }
