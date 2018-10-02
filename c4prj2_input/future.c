@@ -26,7 +26,7 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
   if (!fc) {
     return;
   }
-  if (!fc.decks) {
+  if (!fc->decks) {
     return;
   }
   if (!deck) {
