@@ -47,8 +47,8 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
   size_t k = 0;
   for (size_t i=0; i<fc->n_decks; i++) {
     if (fc->decks[i].n_cards > 0) {
+      card_t c = *deck->cards[k];
       for (size_t j=0; j<fc->decks[i].n_cards; j++) {
-	card_t c = *deck->cards[k];
 	*fc->decks[i].cards[j] = c;
       }
     }
