@@ -39,8 +39,10 @@ int main(int argc, char ** argv) {
   deck_t * shuffled = malloc(sizeof(*shuffled));
   shuffled->cards = NULL;
   shuffled->n_cards = 0;
-  card_t c = card_from_num(0);
-  add_card_to(shuffled, c);
+  for (int i=0; i<2; i++) {
+    card_t c = card_from_num(i);
+    add_card_to(shuffled, c);
+  }
 
   //display shuffled hand
   printf("Shuffled hand\n");
@@ -53,20 +55,24 @@ int main(int argc, char ** argv) {
   //display fc with known card
   printf("Hand with known cards\n");
   for (int i=0; i<fc.n_decks; i++) {
+    printf("fc.deck[%d]\n", i);
     print_hand(&fc.decks[i]);
+    printf("\n");
   }
-  printf("\n");
 
   for (int i=0; i<n_hands; i++) {
     free_deck(deck_ts[i]);
   }
 
   free(deck_ts);
-  /*
+
   for (int i=0; i<fc.n_decks; i++) {
-    free_deck(&fc.decks[i]);
+    if (fc.decks[i].n_cards > 0) {
+      free_deck(&fc.decks[i]);
+    }
   }
-  */
+
+  free(fc.decks);
 
   exit(EXIT_SUCCESS);
 }
