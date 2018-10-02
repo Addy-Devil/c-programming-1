@@ -38,12 +38,12 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
       num_future_cards++;
     }
   }
-  /*
+  
   if (num_future_cards > deck->n_cards) {
     fprintf(stderr, "future_cards_from_deck: num_future_cards > shuffled_deck->n_cards\n");
     return;
   }
-  */
+  
   size_t k = 0;
   for (size_t i=0; i<fc->n_decks; i++) {
     if (fc->decks[i].n_cards > 0) {
