@@ -20,21 +20,7 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
 }
 
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
-  if (fc == NULL || fc->decks == NULL) {
-    return;
-  }
-  if (!fc) {
-    return;
-  }
-  if (!fc->decks) {
-    return;
-  }
-  if (!deck) {
-    return;
-  }
-  if (deck == NULL) {
-    return;
-  }
+
   if (deck->n_cards == 0) {
     //fprintf(stderr, "future_cards_from_deck: shuffled_deck->n_cards == 0\n");
     return;
